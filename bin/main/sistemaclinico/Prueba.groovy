@@ -2,7 +2,8 @@ package sistemaclinico
 
 class Prueba {
 
-    Integer id
+    Integer idPrueba
+    Integer version
     String descripcion
 
     static constraints = {
@@ -10,6 +11,6 @@ class Prueba {
     }
 
     String toString() {
-        "${this.class.name} : $id"
+        "${this.class.name} : $descripcion"
     }
 }

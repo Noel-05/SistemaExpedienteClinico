@@ -102,15 +102,15 @@ dataSource:
     jmxExport: true
     driverClassName: oracle.jdbc.OracleDriver
     #factoryClassName: oracle.jdbc.pool.OracleDataSource
-    dialect: org.hibernate.dialect.Oracle10gDialect
-    username: ADMIN
-    password: Expediente2021.
+    dialect: org.hibernate.dialect.Oracle12cDialect
+    username: 'ADMIN'
+    password: 'Expediente2021.'
 
 environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:oracle:thin:@dbexpediente_high?TNS_ADMIN=/Users/noelr/Desktop/SistemaClinico/wallet
+            url: jdbc:oracle:thin:@dbexpediente_high?TNS_ADMIN=/Users/noelr/Desktop/SistemaClinico/wallet/
             #url: jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=gb789d530728bbf_dbexpediente_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))
     test:
         dataSource:
