@@ -3,15 +3,13 @@ package sistemaclinico
 class PruebaUno {
     
     Long id
-    
-    //Long codigo_prueba_uno
     String nombre_prueba_uno
     String titulo_prueba_uno
 
     static constraints = {
         nombre_prueba_uno(nullable:false)
-        titulo_prueba_uno(nullaber:false)
-        id(nullaber:true)
+        titulo_prueba_uno(nullable:false)
+        id(nullable:true)
     }
     
     static mapping = {
