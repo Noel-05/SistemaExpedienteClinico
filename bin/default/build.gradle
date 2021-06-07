@@ -35,6 +35,8 @@ configurations {
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
+    // 1. Para que reconozca la libreria JDBC de Spring
+    compile "org.springframework.boot:spring-boot-starter-data-jdbc"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
@@ -62,6 +64,18 @@ dependencies {
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.1"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.2.4"
+    // 2. Para importar el JDBC y el UCP
+    //runtime "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+    //runtime "com.oracle.ojdbc:oraclepki:19.3.0.0"
+    //runtime "com.oracle.ojdbc:osdt_core:19.3.0.0"
+    //runtime "com.oracle.ojdbc:osdt_cert:19.3.0.0"
+    //runtime "com.oracle.ojdbc:ucp:19.3.0.0"
+    //---------------------
+    runtime "com.oracle.database.jdbc:ojdbc8:19.3.0.0"
+    runtime "com.oracle.database.jdbc:ucp:19.3.0.0"
+    runtime "com.oracle.database.security:oraclepki:19.3.0.0"
+    runtime "com.oracle.database.security:osdt_core:19.3.0.0"
+    runtime "com.oracle.database.security:osdt_cert:19.3.0.0"
     testCompile "io.micronaut:micronaut-inject-groovy"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.mockito:mockito-core"
