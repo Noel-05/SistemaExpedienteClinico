@@ -14,7 +14,7 @@
 
         <!-- Agregar esto para el botón Regresar -->
         <div class="container" align="center">
-            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'usuario', action:'list')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'usuario', action:'login')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
         </div>
 
         </br>
@@ -54,18 +54,15 @@
                         </div>
 
                         <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
-                            <label for="estadoEmpelado">
-                                <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
-                            </label></br>
-                            <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccionel estado del usuario."  style="display:inline;" required="True">
-                                <option selected value="1">Activo</option>
-                                <option value="2">Desactivo</option>
-                            </select></br>
-                            <!-- <g:textField name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" /> -->
+                            <g:field type="hidden" name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" />
+                        </div>
+                        
+                        <div class="fieldcontain ${hasErrors(bean: usuario.idRol, field: 'idRol', 'error')} ">
+                            <g:field type="hidden" name="idRol" value="23" class="form-control" style="width:35%; display:inline;"/>
                         </div>
 
-                        </br>
-                        <f:field bean="usuario" property="idRol" label="Rol de Usuario"/>
+                        <!-- </br>
+                        <f:field bean="usuario" property="idRol" label="Rol de Usuario"/> -->
 
                     </fieldset></br>
 
