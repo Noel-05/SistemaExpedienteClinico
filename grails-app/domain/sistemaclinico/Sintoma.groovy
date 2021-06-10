@@ -10,7 +10,7 @@ class Sintoma {
     static mappedBy = [idConsulta: "id"]
 
     static constraints = {
-        idConsulta(nullable: true, blank: true)
+        idConsulta(nullable: false)
         fechaInicio(unique: false, nullable: false, blank: false)
         diasConMalestar(unique: false, nullable: false, blank: false)
         descripcion(unique: false, nullable: true, blank: false)
