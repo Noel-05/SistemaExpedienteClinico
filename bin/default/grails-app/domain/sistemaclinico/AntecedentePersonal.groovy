@@ -6,8 +6,8 @@ class AntecedentePersonal {
     String sintoma
     Date iniciosSintoma
     String automedicacion
-    
-    static belongsTo=[idExpediente: Expediente]
+    Expediente idExpediente
+
     static mappedBy = [idExpediente: "id"] 
     
     static constraints = {
@@ -20,7 +20,7 @@ class AntecedentePersonal {
         version false
         id column: "IDANTECEDENTEPERSONAL"
         sintoma column: "SINTOMA"
-        iniciosSintoma column: "INICIOSINTOMA"
+        iniciosSintoma column: "INICIOSSINTOMA"
         automedicacion column: "AUTOMEDICACION"
         idExpediente column: "IDEXPEDIENTE"
     }

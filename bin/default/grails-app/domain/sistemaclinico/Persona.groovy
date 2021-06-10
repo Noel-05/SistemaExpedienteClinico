@@ -1,7 +1,7 @@
 package sistemaclinico
 
-class Persona implements Serializable {
-    //Long id
+class Persona {
+
     String id
     Persona perIdPersona
     Direccion idDireccion
@@ -12,10 +12,9 @@ class Persona implements Serializable {
     Long estadoCivil
     String apellidos 
     Long genero
-    String dui
+    String dui 
     
-    static hasMany=[idContacto: Contacto]
-    static mappedBy = [idDireccion: 'id'] 
+    static mappedBy = [idDireccion: "id"]
 
     static constraints = {
         fechaNacimiento(withFormat: 'DD/MM/YY')
@@ -26,13 +25,11 @@ class Persona implements Serializable {
         username(nullable:true)
         estadoCivil( nullable:true)
         genero(nullable:true)
-        idContacto(nullable:true)
     }
     
     static mapping = {
         table "PERSONA"
-        version false
-        //id column:"ID", 
+        version false 
         id column: "IDPERSONA", generator: 'assigned', type: 'string'
         perIdPersona column: "PER_IDPERSONA"
         idDireccion column: "IDDIRECCION"
@@ -43,14 +40,9 @@ class Persona implements Serializable {
         estadoCivil column: "ESTADOCIVIL"
         apellidos column: "APELLIDOS"
         genero column: "GENERO"
-        dui column: "DOCUMENTOIDENTIDAD"
-        idContacto cascade: 'all-delete-orphan'
-        idDireccion cascade: 'all-delete-orphan'
+        dui column: "DOCUMENTOIDENTIDAD" 
     }
     public void setId (String id){
         this.id = id
-    }
-    public void setDireccion (Direccion idDireccion){
-        this.idDireccion = idDireccion
     }
 }

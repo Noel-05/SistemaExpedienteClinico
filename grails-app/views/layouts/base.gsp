@@ -104,34 +104,25 @@
                                 </li>
                             </g:if>
                         </g:if>
-
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                            <ul class="list-unstyled full-box">
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
                                 <li>
-                                    <a href="salon.html"><i class="zmdi zmdi-accounts-list zmdi-hc-fw"></i> Consultar</a>
+                                    <g:link controller="persona" action="index">
+                                        <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </g:link>
                                 </li>
+                            </g:if>
+                        </g:if>
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
                                 <li>
-                                    <a href="period.html"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Registrar </a>
-                                </li>
-                                <li>
-                                    <a href="subject.html"><i class="zmdi zmdi-edit zmdi-hc-fw"></i> Editar </a>
-                                </li>
-                                <li>
-                                    <a href="section.html"><i class="zmdi zmdi-delete zmdi-hc-fw"></i> Eliminar</a>
-                                </li>
-                            </ul>
-                        </li>
+                                    <g:link controller="expediente" action="index">
+                                        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </g:link>
 
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-
-                        </li>
-
+                                </li>
+                            </g:if>
+                        </g:if>
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-card zmdi-hc-fw"></i> Historial Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
