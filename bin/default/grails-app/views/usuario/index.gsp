@@ -11,7 +11,7 @@
         
             <!-- Agregar esto como Título del Template -->
             <font face="small fonts" size="10" color="#049286">
-                <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list.label" args="[entityName]" default="Lista de Usuarios"/></h1>
+                <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list" args="[entityName]" default="Listado de Usuarios"/></h1>
             </font>
             
             <!-- Agregar esto para el botón de Nuevo Registro -->

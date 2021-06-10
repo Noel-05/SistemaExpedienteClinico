@@ -22,7 +22,7 @@
         <div id="edit-usuario" class="content scaffold-edit" role="main">
             
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+                <div class="message" role="status">${flash.message}</div>
             </g:if>
             
             <g:hasErrors bean="${this.usuario}">
@@ -58,7 +58,17 @@
                             <label for="estadoEmpelado">
                                 <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
                             </label></br>
-                            <g:field type="number" name="estadoEmpelado" value="${usuario?.estadoEmpelado}" class="form-control" style="width:35%; display:inline;" />
+                            <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccionel estado del usuario."  style="display:inline;" required="True">
+                                <g:if test="${usuario?.estadoEmpelado == 1}">
+                                    <option selected value="1">Activo</option>
+                                    <option value="2">Desactivo</option>
+                                </g:if>
+                                <g:else>
+                                    <option value="1">Activo</option>
+                                    <option selected value="2">Desactivo</option>
+                                </g:else>
+                            </select></br>
+                            <!-- <g:field type="number" name="estadoEmpelado" value="${usuario?.estadoEmpelado}" class="form-control" style="width:35%; display:inline;" /> -->
                         </div>
 
                         </br>
