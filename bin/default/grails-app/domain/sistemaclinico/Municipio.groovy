@@ -11,7 +11,7 @@ class Municipio {
         id(nullable:true)
     }
      static mapping = {
-        table "MUNICIPIO"
+        table "MUNICIPAIO"
         version false
         id column: "IDMUNICIPIO"
         nombre column:"NOMBREMUNICIPIO"

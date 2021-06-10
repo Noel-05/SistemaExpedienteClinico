@@ -5,11 +5,12 @@ class AntecedenteFamiliar {
     Long id
     String descripcion
     String relacionAntecedenteFamiliar
-    static belongsTo=[idExpediente: Expediente]
+    Expediente idExpediente
 
     static mappedBy = [idExpediente: "id"]
 
     static constraints = {
+        descripcion(blank: true)
         relacionAntecedenteFamiliar(nullable:false)
         id(nullable:true)
     }
