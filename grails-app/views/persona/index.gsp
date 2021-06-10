@@ -58,10 +58,10 @@
                                         <g:if test="${ !paciente.empty }">
                                            
                                         
-                                            <g:each var="p" in="${paciente}">
+                                            <g:each status="i" var="p" in="${paciente}">
                                             <tr>
                                                 
-                                                <td></td>
+                                                <td>${i+1}</td>
                                                 <td>${p?.id}</td>
                                                 <td>${p?.nombres} </td>
                                                 <td>${p?.apellidos} </td>
@@ -79,7 +79,7 @@
                                             </g:each>
                                             </g:if>
                                             <g:else>
-                                               <div class="alert alert-info mt-4" role="alert" >
+                                               <div class="alert alert-info mt-4 ml-5" role="alert" >
                                                     No se encontraron registros
                                                 </div>
                                             </g:else>

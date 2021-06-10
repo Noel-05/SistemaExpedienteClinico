@@ -56,18 +56,18 @@
                                         <tbody>
                                         <g:if test="${ !expedientes.empty }">
                                         
-                                            <g:each var="e" in="${expedientes}">
+                                            <g:each status="i" var="e" in="${expedientes}">
                                             <tr>
                                                 
-                                                <td></td>
-                                                <td>${e?.fechaCreado}</td>
+                                                <td>${i+1}</td>
+                                                <td><g:formatDate format="dd/MM/yyyy" date="${e?.fechaCreado}"/></td>
                                                 <td>${e?.idPersona.nombres} ${e?.idPersona.apellidos}</td>
                                                 <td>
                                                     <div class="btn-group text-nowrap">
                                                     <g:form resource="${this.expediente}" method="DELETE">
                                                         <fieldset class="buttons">
                                                             <g:link controller="expediente" action="show" id="${e?.id}"><g:message code="default.button.show.label" default="Ver" /></g:link> | 
-                                                            <g:link  action="edit" resource="${this.expediente}"><g:message code="default.button.edit.label" default="Editar" /></g:link> |
+                                                            <g:link  contoller="expediente" action="edit" id="${e?.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link>
                                                             <button class="btn btn-danger" type="submit" value="${message(code: 'Expediente eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Esta seguro? Se eliminara un registro')}');">Eliminar</button>
                                                         </fieldset>
                                                     </g:form>
@@ -78,7 +78,7 @@
                                                
                                         </g:if>
                                         <g:else>
-                                               <div class="alert alert-info mt-4" role="alert" >
+                                               <div class="alert alert-info mt-4 ml-5" role="alert" >
                                                     No se encontraron registros
                                                 </div>
                                             </g:else>

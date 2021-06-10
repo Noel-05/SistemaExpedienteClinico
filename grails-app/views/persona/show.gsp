@@ -59,12 +59,12 @@
                         </tr>
                         <tr>
                             <th scope="row">Fecha de nacimiento:</th>
-                            <td>${persona?.fechaNacimiento}</td>
+                            <td><g:formatDate format="dd/MM/yyyy" date="${persona?.fechaNacimiento}"/> </td>
                         </tr>
                         <tr>
                             <th scope="row">Direcci&oacute;n:</th>
                             <g:if test="${persona?.idDireccion != null }">
-                               <td>${persona?.idDireccion.calle}, ${persona?.idDireccion.pasaje}, ${persona?.idDireccion.colonia}, ${persona?.idDireccion.idMunicipio.nombre}, ${persona?.idDireccion.idMunicipio.idDepartamento.nombre} </td>
+                               <td>Calle ${persona?.idDireccion.calle}, Psje. ${persona?.idDireccion.pasaje}, Colonia ${persona?.idDireccion.colonia}, ${persona?.idDireccion.idMunicipio.nombre}, ${persona?.idDireccion.idMunicipio.idDepartamento.nombre} </td>
                             </g:if>
                             <td></td>
                         </tr>

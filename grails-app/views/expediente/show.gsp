@@ -22,7 +22,7 @@
                     <tbody>
                         <tr>
                             <th scope="row"> Fecha de creacion:</th>
-                            <td>${expediente?.fechaCreado}</td>
+                            <td><g:formatDate format="dd/MM/yyyy" date="${expediente?.fechaCreado}"/></td>
                         </tr>
                         <tr>
                             <th scope="row">Paciente:</th>

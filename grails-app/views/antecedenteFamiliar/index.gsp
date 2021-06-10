@@ -49,17 +49,17 @@
                                         </thead>
                                         <tbody>
                                         <g:if test="${ !(antecedentes.empty) }">
-                                          <g:each in="${antecedentes}">
+                                          <g:each status="i" var="a" in="${antecedentes}">
                                             <tr>
-                                                <td></td>
-                                                <td>${it.descripcion}</td>
-                                                <td>${it.relacionAntecedenteFamiliar}</td>
+                                                <td>${i+1}</td>
+                                                <td>${a?.descripcion}</td>
+                                                <td>${a?.relacionAntecedenteFamiliar}</td>
                                                 <td>
                                                     <div class="btn-group text-nowrap">
                                                     <g:form resource="${this.antecedenteFamiliar}" method="DELETE">
                                                     <fieldset class="buttons">
-                                                            <g:link controller="antecedenteFamiliar" action="show" id="${it.id}">Ver</g:link> |
-                                                            <g:link  controller="antecedenteFamiliar" action="edit" id="${it.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link> |
+                                                            <g:link controller="antecedenteFamiliar" action="show" id="${a?.id}">Ver</g:link> |
+                                                            <g:link  controller="antecedenteFamiliar" action="edit" id="${a?.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link>
                                                             <button class="btn btn-danger"  type="submit" value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Eliminar')}');">Eliminar</button>
                                                         </fieldset>
                                                     </g:form>

@@ -27,7 +27,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Fecha de inicio de los sintomas:</th>
-                            <td>${antecedentePersonal?.iniciosSintoma}</td>
+                            <td><g:formatDate format="dd/MM/yyyy" date="${antecedentePersonal?.iniciosSintoma}"/></td>
                         </tr>
                         <tr>
                             <th scope="row">Automedicacion:</th>

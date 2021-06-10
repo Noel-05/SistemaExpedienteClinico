@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="base" />
         <g:set var="entityName" value="${message(code: 'expediente.label', default: 'Expediente')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#edit-expediente" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
         <div id="edit-expediente" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -26,15 +17,50 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.expediente}" method="PUT">
-                <g:hiddenField name="version" value="${this.expediente?.version}" />
-                <fieldset class="form">
-                    <f:all bean="expediente"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
-            </g:form>
+            <section class="content">
+			<div class="container" align="center">
+					<g:link class="btn btn-outline-success" style="background-color:#009688; color:white;" controller="persona" action="index">Regresar</g:link>
+			</div>
+				<div class="container-fluid">
+					<div class="container w-75 p-3">
+						<div class="card">
+							<div class="card-header">
+								Editar expediente
+							</div>
+							<div class="card-body">
+								<div class="col-md-9" style="margin-left: 100px;">
+									<!--<div class="card-body">-->
+									<div class="mt-4"></div>
+									 <g:form resource="${this.expediente}" method="PUT">
+                                     <g:hiddenField name="version" value="${this.expediente?.version}" />
+										<fieldset class="form">
+											<div class="form-group row">
+											<label for="fechaCreado" class="col-4 col-form-label"><strong>C&oacute;digo de Paciente:</strong> </label> 
+											<div class="col-8">
+											  <input value="${expediente?.idPersona.id}" id="idPersona" name="idPersona" placeholder="Elegir fecha de creación del expediente." type="text" required="required" class="form-control" value="${paciente}">
+											  <span id="calleHelpBlock" class="form-text text-muted">El c&oacute;digo del paciente no se puede modificar.</span>
+										  </div>
+									  </div> 
+											<div class="form-group row">
+											<label for="fechaCreado" class="col-4 col-form-label">Fecha de creación:</label> 
+											<div class="col-8">
+											  <input value="${expediente?.fechaCreado}" id="fechaCreado" name="fechaCreado" placeholder="Elegir fecha de creación del expediente." type="date" required="required" class="form-control">
+											  <span id="calleHelpBlock" class="form-text text-muted">Ingresar la fecha de creaci&oacute;n del expediente.</span>
+										  </div>
+									  </div> 
+									  <div class="form-group row">
+										<div class="offset-4 col-8">
+										  <button style="background-color:#009688; color:white;" name="submit" type="submit" class="btn btn-primary">Guardar</button>
+									  </div>
+								  </div>
+								  </g:form>
+										</fieldset>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
         </div>
     </body>
 </html>

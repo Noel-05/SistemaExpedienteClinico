@@ -56,17 +56,17 @@
                                         </thead>
                                         <tbody>
                                         <g:if test="${ !(contactos.empty) }">
-                                                <g:each in="${contactos}">
+                                                <g:each status="i" var="c" in="${contactos}">
                                                 <tr>
                                                     
-                                                    <td></td>
-                                                    <td>${it.telefono}</td>
-                                                    <td>${it.correo}</td>
+                                                    <td>${i+1}</td>
+                                                    <td>${c?.telefono}</td>
+                                                    <td>${c?.correo}</td>
                                                     <td>
                                                         <div class="btn-group text-nowrap">
                                                         <g:form resource="${this.contacto}" method="DELETE">
                                                             <fieldset class="buttons">
-                                                            <g:link  controller="contacto" action="edit" id="${it.id}">Editar</g:link> |
+                                                            <g:link  controller="contacto" action="edit" id="${c?.id}">Editar</g:link> 
                                                             <button class="btn btn-danger" type="submit"><g:message  value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Esta seguro? Se eliminara un registro')}');" />Eliminar</button>
                                                             </fieldset>
                                                         </g:form> 

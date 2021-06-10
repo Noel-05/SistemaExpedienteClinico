@@ -52,7 +52,7 @@
 										<div class="form-group row">
 											<label for="iniciosSintoma" class="col-4 col-form-label">Fecha de inicio de los sintomas:</label> 
 											<div class="col-8">
-											  <input id="iniciosSintoma" name="iniciosSintoma" placeholder="Relacion" type="date" required="required" class="form-control" value="${this.antecedentePersonal?.iniciosSintoma}">
+											  <input  id="iniciosSintoma" name="iniciosSintoma" placeholder="Relacion" type="date" required="required" class="form-control" value="${this.antecedentePersonal?.iniciosSintoma}">
 											  <span id="calleHelpBlock" class="form-text text-muted">Seleccionar la feccha en que dan inicio los sintomas presentados.</span>
 										    </div>
 									  </div>

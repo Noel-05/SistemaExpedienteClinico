@@ -109,7 +109,7 @@
                                                     <div class="form-group row">
                                                         <label for="fechaNacimiento" class="col-4 col-form-label">Fecha de nacimiento:</label> 
                                                         <div class="col-8">
-                                                        <input value="${persona.fechaNacimiento}" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha de nacimiento" type="date" class="form-control" required="required" aria-describedby="fechaNacimientoHelpBlock"/> 
+                                                        <input  value="${persona.fechaNacimiento}" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha de nacimiento" type="date" class="form-control" required="required" aria-describedby="fechaNacimientoHelpBlock"/> 
                                                         <span id="fechaNacimientoHelpBlock" class="form-text text-muted">Ingresar fecha de nacimiento.</span>
 
                                                         </div>

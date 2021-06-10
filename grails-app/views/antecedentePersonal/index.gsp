@@ -49,17 +49,17 @@
                                         </thead>
                                         <tbody>
                                         <g:if test="${ !(antecedentes.empty) }">
-                                            <g:each in="${antecedentes}">
+                                            <g:each status="i" var="a" in="${antecedentes}">
                                             <tr>
-                                               <td></td>
-                                                <td>${it.iniciosSintoma}</td>
+                                               <td>${i +1}</td>
+                                                <td><g:formatDate format="dd/MM/yyyy" date="${a?.iniciosSintoma}"/></td>
                                                 <td>
                                                     <div class="btn-group text-nowrap">
                                                     <g:form resource="${this.antecedentePersonal}" method="DELETE">
                                                     
                                                     <fieldset class="buttons">
-                                                            <g:link  controller="antecedentePersonal" action="show" id="${it?.id}">Ver</g:link> |
-                                                            <g:link  controller="antecedentePersonal" action="edit" id="${it?.id}">Editar</g:link> |
+                                                            <g:link  controller="antecedentePersonal" action="show" id="${a?.id}">Ver</g:link> |
+                                                            <g:link  controller="antecedentePersonal" action="edit" id="${a?.id}">Editar</g:link>
                                                             <button class="btn btn-danger"  type="submit" value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Eliminar')}');">Eliminar</button>
                                                         </fieldset>
                                                     </g:form>
@@ -72,7 +72,7 @@
                                             </g:each>
                                             </g:if>
                                             <g:else>
-                                               <div class="alert alert-info mt-4" role="alert" >
+                                               <div class="alert alert-info mt-4 ml-5" role="alert" >
                                                     No se encontraron registros
                                                 </div>
                                             </g:else>
