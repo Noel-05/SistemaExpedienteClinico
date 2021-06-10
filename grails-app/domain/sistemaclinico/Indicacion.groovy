@@ -3,7 +3,7 @@ package sistemaclinico
 class Indicacion {
     Long id
     Medicamento medicamento
-    Tratamiento tratamiento
+    TratamientoMedico tratamiento
     Date fechaInicio
     Date fechaFinal
     String dosis
