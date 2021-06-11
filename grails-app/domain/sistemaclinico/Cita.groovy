@@ -34,4 +34,8 @@ class Cita {
     String toString(){
         "${idMotivo}"
     }
+
+    String toString(){
+        "$nombre $apellido"
+    }
 }

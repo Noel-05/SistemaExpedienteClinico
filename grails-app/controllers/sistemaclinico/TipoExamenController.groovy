@@ -10,8 +10,8 @@ class TipoExamenController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond tipoExamenService.list(params), model:[tipoExamenCount: tipoExamenService.count()]
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        [tipoExamenInstanceList: TipoExamen.list(params), tipoExamenInstanceTotal: Usuario.count()]
     }
 
     def show(Long id) {

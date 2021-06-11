@@ -2,6 +2,7 @@ package sistemaclinico
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import sistemaclinico.TipoExamen
 
 class ExamenClinicoController {
 
@@ -10,8 +11,8 @@ class ExamenClinicoController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond examenClinicoService.list(params), model:[examenClinicoCount: examenClinicoService.count()]
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        [examenClinicoInstanceList: ExamenClinico.list(params), examenClinicoInstanceTotal: ExamenClinico.count()]
     }
 
     def show(Long id) {
@@ -20,6 +21,7 @@ class ExamenClinicoController {
 
     def create() {
         respond new ExamenClinico(params)
+
     }
 
     def save(ExamenClinico examenClinico) {
