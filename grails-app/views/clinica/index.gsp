@@ -43,7 +43,6 @@
                                                 <th scope="col" style="color:#009688;">Nombre</th>
                                                 <th scope="col" style="color:#009688;">direccion</th>
                                                  <th scope="col" style="color:#009688;">inicio operaciones</th>
-                                                <th scope="col" style="color:#009688;">Opcion</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -55,14 +54,7 @@
                                                 <td> <g:link controller="clinica" action="show" id="${p.id}">${p?.nombre} </g:link> </td>
                                                 <td>${p?.direccion} </td>
                                                 <td>${p?.inicioOperaciones} </td>
-                                                <td>
-                                                    <div class="btn-group text-nowrap">
-                                                    <g:form resource="${this.clinica}" method="DELETE">
-                                                        <g:link action="edit" controller="clinica" id="${p?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                                                        <button class="btn btn-danger" type="submit" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Esta seguro? Se eliminara un registro')}');">Eliminar</button>
-                                                    </g:form> 
-                                                    </div>
-                                                </td>
+                            
                                             </tr>
                                             </g:each>
                                             </g:if>
@@ -75,13 +67,13 @@
                                     </table>
                                     <div class="pagination">
                                         <g:paginate total="${paciente ?: 0}" />
-                                    </div></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-    </div> 
     </body>
 </html>
