@@ -17,8 +17,8 @@ class TratamientoMedico {
         table "TRATAMIENTO"
         version false
         id column:"IDTRATAMIENTO"
-        fechaAsignado: "FECHAASIGNADO"
-        comentario:"COMENTARIO"
-        diagnostico:"IDDIAGNOSTICO"
+        fechaAsignado column: "FECHA_ASIGNADO"
+        comentario column:"COMENTARIO"
+        diagnostico column:"IDDIAGNOSTICO"
     }
 }

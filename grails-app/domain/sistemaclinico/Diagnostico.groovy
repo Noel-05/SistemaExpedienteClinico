@@ -11,7 +11,7 @@ class Diagnostico {
     static mappedBy=[codigoInternacional:"CODIGOINTERNACIONAL",consulta:"IDCONSULTA"]
     static constraints = {
         consulta(nullable:false)
-        id(nullable:false)
+        //id(nullable:false)
         codigoInternacional(nullable:false)
         fechaRealizado(nullable:false)
         esFinal(nullable:false)
