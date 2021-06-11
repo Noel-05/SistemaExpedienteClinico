@@ -4,6 +4,8 @@
         <meta name="layout" content="base" />
         <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <asset:stylesheet src="application.css"/>
+        <asset:stylesheet rel="stylesheet" href="main2.css"/>
     </head>
     
     <body>
@@ -22,7 +24,7 @@
         <div id="show-usuario" class="content scaffold-show" role="main">
             
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+                <div class="message" role="status">${flash.message}</div>
             </g:if>
             
             <div style="text-align:center; margin: 0 auto;">
@@ -59,7 +61,7 @@
 
             
                 <g:form resource="${this.usuario}" method="DELETE">
-                    <fieldset class="buttons">
+                    <fieldset>
                         <button type="button" class="btn btn-outline-success" href="${createLink(controller:'usuario', action:'list')}" style="background-color:#009688; color:white;"><g:link class="edit" action="edit" resource="${this.usuario}" style="text-decoration:none; color:white;"><g:message code="default.button.edit.label" default="Edit" /></g:link></button>
                         
                         <input class="btn btn-outline-success" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" style="background-color:#009688; color:white;"/>

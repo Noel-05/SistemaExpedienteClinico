@@ -12,6 +12,15 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <div class="row align-items-center justify-content-center">
+            <!-- Agregar esto como Título del Template -->
+                <font face="small fonts" size="10" color="#049286">
+                    <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Detalles de expediente de " args="[entityName]" /><strong>${expediente?.idPersona.id}</strong></h1>
+                </font>
+
+                <!-- Agregar esto para el botón Regresar -->
+                <div class="container" align="center">
+                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'expediente', action:'index')}" style="background-color:#009688; color:white;"><g:link class="index" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+                </div>
     <div class="col-lg-6 col-md-8">
         <div class="card">
             <div class="card-header">
@@ -43,9 +52,6 @@
                     </tbody>
                 </table>
 
-            </div>
-            <div class="card-footer">
-                <g:link style="background-color:#009688; color:white;" class="btn btn-info float-left mt-3" controller="expediente" action="index">Regresar</g:link>
             </div>
         </div>
     </div>

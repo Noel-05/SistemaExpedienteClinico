@@ -14,7 +14,7 @@ class Persona implements Serializable {
     Long genero
     String dui
     
-    static hasMany=[idContacto: Contacto]
+    static hasMany=[idContacto: Contacto, idHistorialClinico: HistorialClinico]
     static mappedBy = [idDireccion: 'id'] 
 
     static constraints = {

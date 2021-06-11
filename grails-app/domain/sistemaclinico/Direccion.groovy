@@ -1,6 +1,7 @@
 package sistemaclinico
 
 class Direccion {
+
     Long id
     String calle
     String colonia
@@ -8,12 +9,12 @@ class Direccion {
     String numeroLugar
     Municipio idMunicipio
 
-    static mappedBy = [idMunicipio: 'idMunicipio']
+    static mappedBy = [idMunicipio: "id"] 
 
     static constraints = {
-        calle(nullable:false)
-        numeroLugar(nullable: false)
-        idMunicipio(nullable:true)
+        pasaje(nullable: true)
+        colonia(nullable:true)
+        id(nullable:true)
     }
     static mapping = {
         table "DIRECCION"

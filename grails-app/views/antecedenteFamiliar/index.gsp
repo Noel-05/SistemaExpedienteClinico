@@ -10,14 +10,14 @@
             <div class="wrapper">
         <div class="content-wrapper">
             <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                
-                        </div><!-- /.col -->
-                    </div>
-
-                </div>
+            <!-- Agregar esto como Título del Template -->
+                    <font face="small fonts" size="10" color="#049286">
+                        <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Listado de Informacio Familiar" args="[entityName]" /></h1>
+                    </font>
+				<div class="container" align="center">
+					<g:link class="btn btn-outline-success" aria-expanded="false" controller="expediente" action="show" id="${expediente.id}" style="background-color:#009688; color:white;">Regresar
+                    </g:link>
+				</div>
             </div>
             <section class="content">
                 <div class="container-fluid">
@@ -31,15 +31,11 @@
                         <div class="card">
                             <div class="card-header">
                                 Antecedentes Familiares registrados
-                                <div class="btn-group">
-                                    <g:link class="btn btn-sm btn-outline-success" aria-expanded="false" controller="expediente" action="show" id="${expediente.id}" style="background-color:#009688; color:white;"> Agregar nuevo
-                                    </g:link>
-                                </div>
                             </div>
                             <div class="card-body px-0 pt-0">
                                 <div class="table-responsive" style="width:80%; display:inline-block;">
                                     <table class="table table-hover text-center ml-5 mt-2">
-                                        <thead class="thead-light">
+                                        <thead >
                                             <tr>
                                                 <th scope="col" style="color:#009688;">#</th>
                                                 <th scope="col" style="color:#009688;">Descripcion</th>

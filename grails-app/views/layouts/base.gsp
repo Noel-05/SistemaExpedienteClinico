@@ -108,7 +108,7 @@
                             <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
                                 <li>
                                     <g:link controller="persona" action="index">
-                                        <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente <i class="zmdi zmdi-caret-down pull-right"></i>
+                                        <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente </i>
                                     </g:link>
                                 </li>
                             </g:if>
@@ -117,18 +117,21 @@
                             <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
                                 <li>
                                     <g:link controller="expediente" action="index">
-                                        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
+                                        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico</i>
                                     </g:link>
 
                                 </li>
                             </g:if>
                         </g:if>
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-card zmdi-hc-fw"></i> Historial Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                        </li>
-
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                                <li>
+                                    <g:link controller="historialClinico" action="index">
+                                        <i class="zmdi zmdi-card zmdi-hc-fw"></i> Historial Cl&iacute;nico</i>
+                                    </g:link>
+                                </li>
+                            </g:if>
+                        </g:if>
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Instalaciones <i class="zmdi zmdi-caret-down pull-right"></i>

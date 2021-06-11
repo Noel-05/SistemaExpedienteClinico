@@ -5,12 +5,13 @@ class Expediente {
     Long id
     Date fechaCreado
     Persona idPersona
-    
+
+    static hasMany=[idAntecedenteFamiliar: AntecedenteFamiliar, idAntecedentePersonal: AntecedentePersonal] 
     static mappedBy = [idPersona: "id"]
 
     static constraints = {
         id(nullaber:true)
-        idPersona(nullable:true)
+        idPersona(unique:true)
     }
     static mapping = {
         table "EXPEDIENTE"
