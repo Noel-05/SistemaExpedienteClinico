@@ -21,11 +21,20 @@ class UsuarioController {
     
     def validarLogin(){
         def usuario = Usuario.findWhere(["username":params.username, "pass":DigestUtils.shaHex(params.pass), "estadoEmpelado":1])
+        
         if (!usuario) {
-            flash.message = "No se encontró el Usuario: ${params.username}. Porfavor verifique el Username o el Password."
-            redirect(action:'login')
-        }
-        else {
+            
+            def usuarioBloq = Usuario.findWhere(["username":params.username, "pass":DigestUtils.shaHex(params.pass), "estadoEmpelado":2])
+        
+            if(!usuarioBloq) {
+                flash.message = "No se encontró el Usuario: ${params.username}. Porfavor verifique el Username o el Password."
+                redirect(action:'login')
+            } else {
+                flash.message = "Su Usuario se encuentra Bloqueado. Puede solicitar su desbloqueo en el apartado inferior."
+                redirect(action:'login')
+            }
+            
+        } else {
             session.usuario = usuario
             redirect(controller:'home', action:'index')
         }

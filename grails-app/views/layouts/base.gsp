@@ -52,9 +52,11 @@
                     <g:if test="${session.usuario}">
                         <figcaption class="text-center text-titles">${session.usuario}</figcaption>
                         <figcaption class="text-center text-titles">${session.usuario.idRol.nombreRol}</figcaption>
+                        <figcaption class="text-center text-titles">${hoy = new Date()}</figcaption>
                     </g:if>
                     <g:else>
                         <figcaption class="text-center text-titles">Sin Iniciar.</figcaption>
+                        <figcaption class="text-center text-titles">${hoy = new Date()}</figcaption>
                     </g:else>
                     
                 </figure>
@@ -104,7 +106,13 @@
                                 </li>
                             </g:if>
                         </g:if>
-
+                            
+                        <li>
+                            <g:link controller="cita" action="index">
+                                <i class="zmdi zmdi-book zmdi-hc-fw"></i> Citas M&eacute;dicas
+                            </g:link>
+                        </li>
+                        
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente <i class="zmdi zmdi-caret-down pull-right"></i>
@@ -166,12 +174,6 @@
 
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-check zmdi-hc-fw"></i> Citas M&eacute;dicas <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-case zmdi-hc-fw"></i> Consulta M&eacute;dica <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                         </li>
@@ -224,6 +226,16 @@
                                 </li>
                             </ul>
                         </li>
+                        
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                                <li>
+                                    <g:link controller="motivo" action="index">
+                                        <i class="zmdi zmdi-font zmdi-hc-fw"></i> Motivos de Cita
+                                    </g:link>
+                                </li>
+                            </g:if>
+                        </g:if>
 
                     </ul>
                 </g:if>

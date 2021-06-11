@@ -32,29 +32,29 @@
                 <!-- <f:display bean="usuario" /> -->
             
                 <div class="fieldcontain ${hasErrors(bean: usuario.username, field: 'username', 'error')} ">
-                    <label for="username">
+                    <label for="username" style="display:inline; text-align:center; margin: 0 auto;">
                         <g:message code="usuario.username.label" default="Usuario: " />
                     </label></br>
                     <g:textField name="username" readonly="true" value="${usuario?.username}" class="form-control" style="width:35%; display:inline;"/>
                 </div>
 
                 <div class="fieldcontain ${hasErrors(bean: usuario.pass, field: 'pass', 'error')} ">
-                    <label for="pass">
-                        <g:message code="usuario.pass.label" default="Contraseña: " />
+                    <label for="pass" style="display:inline; text-align:center; margin: 0 auto;">
+                        <g:message code="usuario.pass.label" default="Contraseña: "/>
                     </label></br>
                     <g:passwordField name="pass" readonly="true" value="${usuario?.pass}" class="form-control" style="width:35%; display:inline;"/>
                 </div>
 
                 <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
-                    <label for="estadoEmpelado">
+                    <label for="estadoEmpelado" style="display:inline; text-align:center; margin: 0 auto;">
                         <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
                     </label></br>
                     <g:field type="number" name="estadoEmpelado" readonly="true" value="${usuario?.estadoEmpelado}" class="form-control" style="width:35%; display:inline;" />
                 </div>
                 
                 <div class="fieldcontain ${hasErrors(bean: usuario.idRol, field: 'idRol', 'error')} ">
-                    <label for="idRol">
-                        <g:message code="usuario.idRol.label" default="ID ROL: " />
+                    <label for="idRol"style="display:inline; text-align:center; margin: 0 auto;">
+                        <g:message code="usuario.idRol.label" default="Rol de Usuario: " />
                     </label></br>
                     <g:textField name="idRol" required="true" readonly="true" value="${usuario?.idRol}" class="form-control" style="width:35%; display:inline;"/>
                 </div>

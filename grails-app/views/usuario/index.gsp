@@ -27,51 +27,53 @@
                     <div class="message" role="status">${flash.message}</div>
                 </g:if>
 
-                    <!-- Agregar acá todo lo que se mostrará en la tabla -->
-                    <!-- <f:table collection="${usuarioList}" /> -->
-                    <div class="table-responsive" style="width:80%; display:inline-block;">
-                        <table class="table table-hover text-center">
+                <!-- Agregar acá todo lo que se mostrará en la tabla -->
+                <!-- <f:table collection="${usuarioList}" /> -->
+                <div class="table-responsive" style="width:80%; display:inline-block;">
+                    <table class="table table-hover text-center">
 
-                            <thead>
-                                <tr>
-                                    <g:sortableColumn property="username" title="${message(code: 'usuario.username.label', default: 'Nombre de Usuario')}" />
-                                    <!-- <g:sortableColumn property="pass" title="${message(code: 'usuario.pass.label', default: 'Contraseña')}" /> -->
-                                    <g:sortableColumn property="estadoEmpelado" title="${message(code: 'usuario.estadoEmpelado.label', default: 'Estado del Empleado')}" />
-                                    <g:sortableColumn property="idRol" title="${message(code: 'usuario.idRol.label', default: 'Rol')}" />
-                                    <th style="color:#009688;">Opcion</th>
+                        <thead>
+                            <tr>
+                                <g:sortableColumn property="username" title="${message(code: 'usuario.username.label', default: 'Nombre de Usuario')}" />
+                                <!-- <g:sortableColumn property="pass" title="${message(code: 'usuario.pass.label', default: 'Contraseña')}" /> -->
+                                <g:sortableColumn property="correo" title="${message(code: 'usuario.correo.label', default: 'Correo Electrónico')}" />
+                                <g:sortableColumn property="estadoEmpelado" title="${message(code: 'usuario.estadoEmpelado.label', default: 'Estado del Empleado')}" />
+                                <g:sortableColumn property="idRol" title="${message(code: 'usuario.idRol.label', default: 'Rol')}" />
+                                <th style="color:#009688;">Opci&oacute;n</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <g:each in="${usuarioInstanceList}" status="i" var="usuarioInstance">
+                                <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                                    <td><g:link action="show" id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "username")}</g:link></td>
+                                    <!--<td>${fieldValue(bean: usuarioInstance, field: "username")}</td>-->
+                                    <!-- <td>${fieldValue(bean: usuarioInstance, field: "pass")}</td> -->
+                                    <td>${fieldValue(bean: usuarioInstance, field: "correo")}</td>
+                                    <g:if test="${(fieldValue(bean: usuarioInstance, field: "estadoEmpelado")) == '1'}">
+                                        <td>Activo</td>
+                                    </g:if>
+                                    <g:else>
+                                        <td>Bloqueado</td>
+                                    </g:else>
+
+                                    <td>${fieldValue(bean: usuarioInstance, field: "idRol")}</td>
+
+                                    <f:display bean="usuario" />
+                                    <g:form resource="${usuarioInstance.id}" method="DELETE">
+                                        <td><fieldset class="buttons">
+                                            <g:link action="edit" id="${usuarioInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                                            |
+                                            <g:link action="show" id="${usuarioInstance.id}"><g:message code="default.button.show.label" default="Eliminar" /></g:link>
+                                        </fieldset></td>
+                                    </g:form>
+
                                 </tr>
-                            </thead>
+                            </g:each>
+                        </tbody>
 
-                            <tbody>
-                                <g:each in="${usuarioInstanceList}" status="i" var="usuarioInstance">
-                                    <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                        <td><g:link action="show" id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "username")}</g:link></td>
-                                        <!--<td>${fieldValue(bean: usuarioInstance, field: "username")}</td>-->
-                                        <!-- <td>${fieldValue(bean: usuarioInstance, field: "pass")}</td> -->
-                                        <g:if test="${(fieldValue(bean: usuarioInstance, field: "estadoEmpelado")) == '1'}">
-                                            <td>Activo</td>
-                                        </g:if>
-                                        <g:else>
-                                            <td>Inactivo</td>
-                                        </g:else>
-                                        
-                                        <td>${fieldValue(bean: usuarioInstance, field: "idRol")}</td>
-                                        
-                                        <f:display bean="usuario" />
-                                        <g:form resource="${usuarioInstance.id}" method="DELETE">
-                                            <td><fieldset class="buttons">
-                                                <g:link action="edit" id="${usuarioInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                                                |
-                                                <g:link action="show" id="${usuarioInstance.id}"><g:message code="default.button.show.label" default="Eliminar" /></g:link>
-                                            </fieldset></td>
-                                        </g:form>
-                                        
-                                    </tr>
-                                </g:each>
-                            </tbody>
-
-                        </table>
-                    </div>
+                    </table>
+                </div>
 
                 <div class="pagination">
                     <g:paginate total="${usuarioCount ?: 0}" />

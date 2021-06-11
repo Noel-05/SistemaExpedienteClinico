@@ -36,7 +36,7 @@
                             <tr>
                                 <g:sortableColumn property="nombreRol" title="${message(code: 'usuario.nombreRol.label', default: 'Nombre de Rol')}" />
                                 <g:sortableColumn property="estadoEmpleado" title="${message(code: 'usuario.estadoEmpleado.label', default: 'Estado del Rol')}" />
-                                <th style="color:#009688;">Opcion</th>
+                                <th style="color:#009688;">Opci&oacute;n</th>
                             </tr>
                         </thead>
 

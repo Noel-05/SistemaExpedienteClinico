@@ -26,11 +26,11 @@
             </g:if>
             
             <g:hasErrors bean="${this.usuario}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="${this.usuario}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
-            </ul>
+                <ul class="errors" role="alert">
+                    <g:eachError bean="${this.usuario}" var="error">
+                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+                    </g:eachError>
+                </ul>
             </g:hasErrors>
             
             <div style="text-align:center; margin: 0 auto;">
@@ -53,29 +53,38 @@
                             </label></br>
                             <g:passwordField name="pass" required="true" value="${usuario?.pass}" class="form-control" style="width:35%; display:inline;"/>
                         </div>
+                        
+                        <div class="fieldcontain ${hasErrors(bean: usuario.correo, field: 'correo', 'error')} ">
+                            <label for="pass">
+                                <g:message code="usuario.correo.label" default="Correo: " />
+                            </label></br>
+                            <input type="email" name="correo" class="form-control" value="${usuario?.correo}" style="width:35%; display:inline;" required="True" />
+                        </div>
 
                         <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
                             <label for="estadoEmpelado">
                                 <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
                             </label></br>
-                            <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccionel estado del usuario."  style="display:inline;" required="True">
+                            <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccione el estado del usuario."  style="display:inline;" required="True">
                                 <g:if test="${usuario?.estadoEmpelado == 1}">
                                     <option selected value="1">Activo</option>
-                                    <option value="2">Desactivo</option>
+                                    <option value="2">Bloqueado</option>
                                 </g:if>
                                 <g:else>
                                     <option value="1">Activo</option>
-                                    <option selected value="2">Desactivo</option>
+                                    <option selected value="2">Bloqueado</option>
                                 </g:else>
                             </select></br>
                             <!-- <g:field type="number" name="estadoEmpelado" value="${usuario?.estadoEmpelado}" class="form-control" style="width:35%; display:inline;" /> -->
                         </div>
 
                         </br>
-                        
+
                         <f:field bean="usuario" property="idRol" label="Rol de Usuario"/>
                         </fieldset></br>
-                    
+
+                    </fieldset>   
+
                     <fieldset class="buttons">
                         <input type="submit" class="btn btn-outline-success" value="${message(code: 'default.button.update.label', default: 'Update')}" style="background-color:#009688; color:white;"/>
                     </fieldset>

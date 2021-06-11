@@ -28,7 +28,7 @@
             <g:hasErrors bean="${this.usuario}">
                 <ul class="errors" role="alert">
                     <g:eachError bean="${this.usuario}" var="error">
-                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+                        <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
                     </g:eachError>
                 </ul>
             </g:hasErrors>
@@ -52,20 +52,40 @@
                             </label></br>
                             <input type="password" name="pass" class="form-control" value="${usuario?.pass}" style="width:35%; display:inline;" required="True" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_.]).{8,}" title="La Contraseña debe contener almenos una Letra Mayúscula, un Dígito, un Número, un Simbolo Especial y un minímo de 8 carácteres." minlength="8"/>
                         </div>
-
-                        <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
-                            <label for="estadoEmpelado">
-                                <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
+                        
+                        <div class="fieldcontain ${hasErrors(bean: usuario.correo, field: 'correo', 'error')} ">
+                            <label for="pass">
+                                <g:message code="usuario.correo.label" default="Correo: " />
                             </label></br>
-                            <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccionel estado del usuario."  style="display:inline;" required="True">
-                                <option selected value="1">Activo</option>
-                                <option value="2">Desactivo</option>
-                            </select></br>
-                            <!-- <g:textField name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" /> -->
+                            <input type="email" name="correo" class="form-control" value="${usuario?.correo}" style="width:35%; display:inline;" required="True" />
                         </div>
 
-                        </br>
-                        <f:field bean="usuario" property="idRol" label="Rol de Usuario"/>
+                        <g:if test="${session.usuario}">
+                            
+                            <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
+                                <label for="estadoEmpelado">
+                                    <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
+                                </label></br>
+                                <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccione el estado del usuario."  style="display:inline;" required="True">
+                                    <option selected value="1">Activo</option>
+                                    <option value="2">Bloqueado</option>
+                                </select></br>
+                                <!-- <g:textField name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" /> -->
+                            </div>
+
+                            </br>
+                            <f:field bean="usuario" property="idRol" label="Rol de Usuario"/>
+                            
+                        </g:if>
+                        <g:else>
+                            <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
+                                <g:field type="hidden" name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" />
+                            </div>
+
+                            <div class="fieldcontain ${hasErrors(bean: usuario.idRol, field: 'idRol', 'error')} ">
+                                <g:field type="hidden" name="idRol" value="23" class="form-control" style="width:35%; display:inline;"/>
+                            </div>
+                        </g:else>
 
                     </fieldset></br>
 
