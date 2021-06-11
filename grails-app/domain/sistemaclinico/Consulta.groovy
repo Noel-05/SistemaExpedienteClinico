@@ -2,21 +2,30 @@ package sistemaclinico
 
 class Consulta {
     Long id
-    //Persona medico
-    //Cita cita
-    //Expediente expediente
+    Persona medico
+    Cita cita
+    Expediente expediente
     Date fechaRealizada
     String comentario
+
+    static mappedBy = [cita:"IDCITA",expediente:"IDEXPEDIENTE"]
+
     static constraints = {
-        id(nullaber:true)
+        id(nullaber:false)
         fechaRealizada(nullable:false)
         comentario(nullable:false)
+        medico(nullable:false)
+        cita(nullable:false)
+        expediente(nullable:false)
     }
     static mapping={
-        table "Consulta"
+        table "CONSULTA"
         version false
-        id column: "idConsulta"
-        fechaRealizada column: "fechaRealizada"
-        comentario column: "String"
+        id column: "IDCONSULTA"
+        fechaRealizada column: "FECHAREALIZADA"
+        comentario column: "COMENTARIO"
+        medico: "IDEMPLEADO"
+        cita: "IDCITA"
+        expediente: "IDEXPEDIENTE"
     }
 }

@@ -16,7 +16,7 @@ class ExamenFisico {
         fechaRealizado(unique: false, nullable: false, blank: false)
         comentarios(unique: false, nullable: false, blank: false)
         idArchivo(nullable: false)
-    };
+    }
 
     static mapping = {
         idArchivo lazy: false
@@ -27,5 +27,5 @@ class ExamenFisico {
         fechaRealizado column: "FECHAREALIZADO"
         comentarios column: "COMENTARIOS"
         idArchivo column: "IDARCHIVO"
-    };
+    }
 }

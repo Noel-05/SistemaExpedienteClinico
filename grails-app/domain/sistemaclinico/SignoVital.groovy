@@ -7,20 +7,24 @@ class SignoVital {
     Float estatura
     Float presioArterial
     Consulta consulta
+
+    static mappedBy = [consulta: "IDCONSULTA"]
     static constraints = {
         id(nullaber:true)
         peso(nullable:false)
         temperatura(nullable:false)
         estatura(nullable:false)
         presioArterial(nullable:false)
+        consulta(nullable:false)
     }
     static mapping={
-        table "SignosVitales"
+        table "SIGNOSVITALES"
         version false
-        id column: "idSintoma"
-        peso column: "peso"
-        temperatura column: "temperatura"
-        estatura column: "estatura"
-        presionArterial column: "presionArterial"
+        id column: "IDSIGNOSVITALES"
+        peso column: "PESO"
+        temperatura column: "TEMPERATURA"
+        estatura column: "ESTATURA"
+        presionArterial column: "PRESIO_ARTERIAL"
+        consulta: "IDCONSULTA"
     }
 }

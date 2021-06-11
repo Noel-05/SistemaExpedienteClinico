@@ -21,5 +21,5 @@ class DetalleExamen {
         parametro column: "PARAMETRO"
         valor_ column: "VALOR_"
         unidad column: "UNIDAD"
-    };
-};
+    }
+}

@@ -170,11 +170,15 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-face zmdi-hc-fw"></i> Sintomatolog&iacute;a <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                        </li>
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                <li>
+                                    <g:link controller="sintoma" action="index">
+                                        <i class="zmdi zmdi-account zmdi-hc-fw"></i> Sintomatología
+                                    </g:link>
+                                </li>
+                            </g:if>
+                        </g:if>
 
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
