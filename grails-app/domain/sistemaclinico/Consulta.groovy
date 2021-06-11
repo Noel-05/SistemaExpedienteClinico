@@ -28,4 +28,8 @@ class Consulta {
         cita column: "IDCITA"
         expediente column: "IDEXPEDIENTE"
     }
+
+    String toString(){
+        id
+    }
 }

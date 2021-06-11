@@ -45,17 +45,6 @@
             <g:form resource="${this.sintoma}" method="POST">
                 <fieldset class="form">
                     <%-- <f:all bean="sintoma"/> --%>
-                    <%-- <div class="fieldcontain ${hasErrors(bean: sintoma.idConsulta, field: 'idConsulta', 'error')} ">
-                            <label for="sintoma">
-                                <g:message code="sintoma.idConsulta.label" default="Id de consulta: "/>
-                            </label></br>
-                            <f:field bean="sintoma" property="idConsulta" type="search" required="true" value="${this.sintoma.idConsulta}" class="form-control" style="width:35%; display:inline;"/>
-                                <datalist> 
-                                    <g:each in="${sintoma}" var="sint">
-                                        <option value="${sint.idConsulta}"> </option>
-                                    </g:each>
-                                </datalist> --%>
-                    </div>
                     <f:field bean="sintoma" property="idConsulta" label="ID de consulta:"/>
 
                     <div class="fieldcontain ${hasErrors(bean: sintoma.fechaInicio, field: 'fechaInicio', 'error')} ">
