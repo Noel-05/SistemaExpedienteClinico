@@ -6,7 +6,6 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
 
-
     <body>
 
     <!-- Agregar esto como Título del Template -->
@@ -16,16 +15,10 @@
 
         <!-- Agregar esto para el botón Regresar -->
         <div class="container" align="center">
-            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'usuario', action:'list')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'sintoma', action:'list')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
         </div>
         </br>
 
-        <%-- <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div> --%>
         <div id="create-sintoma" class="content scaffold-create" role="main">
 
             <%-- <h1><g:message code="default.create.label" args="[entityName]" /></h1> --%>
@@ -46,12 +39,7 @@
             <g:form resource="${this.sintoma}" method="POST">
                 <fieldset class="form">
                     <%-- <f:all bean="sintoma"/> --%>
-                    <div class="fieldcontain ${hasErrors(bean: sintoma.idConsulta, field: 'idConsulta', 'error')} ">
-                            <label for="sintoma">
-                                <g:message code="sintoma.idConsulta.label" default="Id de consulta: "/>
-                            </label></br>
-                            <f:field bean="sintoma" property="idConsulta"/>
-                    </div>
+                    <f:field bean="sintoma" property="idConsulta" label="ID de consulta:"/>
 
                     <div class="fieldcontain ${hasErrors(bean: sintoma.fechaInicio, field: 'fechaInicio', 'error')} ">
                             <label for="fechaInicio">

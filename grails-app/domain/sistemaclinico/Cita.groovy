@@ -1,29 +1,41 @@
 package sistemaclinico
 
 class Cita {
-    Long id
-    Motivo motivo
-    Date fechaPlanificada
-    Boolean cancelada
-    String nombre
-    String apellido
-    static mappedBy =[motivo:"IDMOTIVO"]
+    Integer id
+    Date fechaHoraPlanificada
+    Integer cancelada
+    String apellidopac
+    String nombrepac
+    Motivo idMotivo
+    
+    static mappedBy = [idMotivo:"id"]
 
     static constraints = {
-        motivo(nullable:false)
-        fechaPlanificada(nullable:false)
-        cancelada(nullable:false)
-        nombre (nullable:false)
-        apellido (nullable:false)
+        id(nullable:true)
+        fechaHoraPlanificada(nullable:false)
+        cancelada(nullable:true)
+        nombrepac(nullable:true)
+        apellidopac(nullable:true)
+        idMotivo(nullable:false)
     }
-    static mapping={
-        table "CITA"
+    
+    static mapping = {
+        idMotivo lazy:false
         version false
-        id column:"IDCITA"
-        motivo column:"IDMOTIVO"
-        fechaPlanificada column:"FECHAHORAPLANIFICADA"
-        nombre column:"NOMBREPAC"
-        apellido column:"APELLIDOPAC"
-        cancelada column:"CANCELADA"
+        table "CITA"
+        id column: "IDCITA"
+        fechaHoraPlanificada column: "FECHAHORAPLANIFICADA"
+        cancelada column: "CANCELADA"
+        nombrepac column: "NOMBREPAC"
+        apellidopac column: "APELLIDOPAC"
+        idMotivo column: "IDMOTIVO"
+    }
+    
+    String toString(){
+        "${idMotivo}"
+    }
+
+    String toString(){
+        "$nombre $apellido"
     }
 }

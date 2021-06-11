@@ -3,7 +3,7 @@ package sistemaclinico
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class PruebaControllerSpec extends Specification implements ControllerUnitTest<PruebaController> {
+class EnvioCorreoControllerSpec extends Specification implements ControllerUnitTest<EnvioCorreoController> {
 
     def setup() {
     }

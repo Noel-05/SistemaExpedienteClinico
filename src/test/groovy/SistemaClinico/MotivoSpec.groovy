@@ -3,7 +3,7 @@ package sistemaclinico
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class PruebaSpec extends Specification implements DomainUnitTest<Prueba> {
+class MotivoSpec extends Specification implements DomainUnitTest<Motivo> {
 
     def setup() {
     }

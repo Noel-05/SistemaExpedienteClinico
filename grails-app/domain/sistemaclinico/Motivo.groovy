@@ -1,15 +1,22 @@
 package sistemaclinico
 
 class Motivo {
-    Long id
-    String motivo
+    Integer id
+    String razonMotivo
+
     static constraints = {
-        motivo(nullable:false)
+        razonMotivo(nullable:false)
+        id(nullable:true)
     }
-    static mapping ={
-        table "motivo"
+    
+    static mapping = {
+        table "MOTIVO"
         version false
         id column: "IDMOTIVO"
-        motivo column:"RAZONMOTIVO"
+        razonMotivo column: "RAZONMOTIVO"
+    }
+    
+    String toString(){
+        "${razonMotivo}"
     }
 }

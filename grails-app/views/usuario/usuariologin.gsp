@@ -52,6 +52,13 @@
                             </label></br>
                             <input type="password" name="pass" class="form-control" value="${usuario?.pass}" style="width:35%; display:inline;" required="True" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_.]).{8,}" title="La Contraseña debe contener almenos una Letra Mayúscula, un Dígito, un Número, un Simbolo Especial y un minímo de 8 carácteres." minlength="8"/>
                         </div>
+                        
+                        <div class="fieldcontain ${hasErrors(bean: usuario.correo, field: 'correo', 'error')} ">
+                            <label for="pass">
+                                <g:message code="usuario.correo.label" default="Correo: " />
+                            </label></br>
+                            <input type="email" name="correo" class="form-control" value="${usuario?.correo}" style="width:35%; display:inline;" required="True" />
+                        </div>
 
                         <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
                             <g:field type="hidden" name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" />
@@ -60,7 +67,7 @@
                         <div class="fieldcontain ${hasErrors(bean: usuario.idRol, field: 'idRol', 'error')} ">
                             <g:field type="hidden" name="idRol" value="23" class="form-control" style="width:35%; display:inline;"/>
                         </div>
-
+                        
                         <!-- </br>
                         <f:field bean="usuario" property="idRol" label="Rol de Usuario"/> -->
 
