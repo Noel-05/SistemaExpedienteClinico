@@ -3,16 +3,16 @@ package sistemaclinico
 class Indicacion {
     Long id
     Medicamento medicamento
-    TratamientoMedico tratamiento
     Date fechaInicio
     Date fechaFinal
     String dosis
     String contraindicaciones
-    static mappedBy=[medicamento:"IDMEDICAMENTO",tratamiento:"IDTRATAMIENTO"]
+    //static belongsTo=[tratamiento: TratamientoMedico]
+    //static mappedBy =[medicamento:"IDMEDICAMENTO", tratamiento:"IDTRATAMIENTO"]
     static constraints = {
-        id (nullable:false)
+        //id (nullable:false)
         medicamento (nullable:false)
-        tratamiento (nullable:false)
+        //tratamiento (nullable:false)
         fechaInicio (nullable:false)
         fechaFinal (nullable:false)
         dosis (nullable:false)
@@ -23,10 +23,13 @@ class Indicacion {
         version false
         id column:"IDINDICACION"
         medicamento column:"IDMEDICAMENTO"
-        tratamiento column:"IDTRATAMIENTO"
+        //tratamiento column:"IDTRATAMIENTO"
         fechaInicio column:"FECHAINICIOINDICACION"
         fechaFinal column:"FECHAFINALINDICACION"
         dosis column:" DOSIS"
         contraindicaciones column: "CONTRAINDICACIONES"
+    }
+    public void setIdTratamiento(TratamientoMedico tratamiento){
+        this.tratamiento=tratamiento
     }
 }

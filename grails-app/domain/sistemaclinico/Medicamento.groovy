@@ -18,7 +18,7 @@ class Medicamento {
         table "MEDICAMENTO"
         version false
         id column: "IDMEDICAMENTO"
-        nombre column:"NOMBREMEDICAMENTO"
+        nombre column:"NOMBRE"
         fechaLote column: "FECHALOTE"
         fechaCaducidad column:"FECHACADUCIDAD"
         via column: "IDVIA"

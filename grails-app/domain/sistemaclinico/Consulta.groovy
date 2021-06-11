@@ -8,10 +8,10 @@ class Consulta {
     Date fechaRealizada
     String comentario
 
-    static mappedBy = [cita:"IDCITA",expediente:"IDEXPEDIENTE"]
+    static mappedBy = [cita:"IDCITA",expediente:"IDEXPEDIENTE", medico:"IDMEDICO"]
 
     static constraints = {
-        id(nullaber:false)
+        //id(nullaber:false)
         fechaRealizada(nullable:false)
         comentario(nullable:false)
         medico(nullable:false)
@@ -24,8 +24,8 @@ class Consulta {
         id column: "IDCONSULTA"
         fechaRealizada column: "FECHAREALIZADA"
         comentario column: "COMENTARIO"
-        medico: "IDEMPLEADO"
-        cita: "IDCITA"
-        expediente: "IDEXPEDIENTE"
+        medico column: "IDEMPLEADO"
+        cita column: "IDCITA"
+        expediente column: "IDEXPEDIENTE"
     }
 }

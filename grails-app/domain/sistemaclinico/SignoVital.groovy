@@ -10,7 +10,7 @@ class SignoVital {
 
     static mappedBy = [consulta: "IDCONSULTA"]
     static constraints = {
-        id(nullaber:true)
+        //id(nullaber:true)
         peso(nullable:false)
         temperatura(nullable:false)
         estatura(nullable:false)
@@ -24,7 +24,7 @@ class SignoVital {
         peso column: "PESO"
         temperatura column: "TEMPERATURA"
         estatura column: "ESTATURA"
-        presionArterial column: "PRESIO_ARTERIAL"
+        presioArterial column: "PRESIONARTERIAL"
         consulta: "IDCONSULTA"
     }
 }

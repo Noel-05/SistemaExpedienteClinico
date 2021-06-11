@@ -9,7 +9,7 @@ class RegistroIngreso {
     String comentario
     static mappedBy = [expediente:"IDEXPEDIENTE", camilla:"IDCAMILLA"]
     static constraints = {
-        id(nullaber:false)
+        //id(nullaber:false)
         fechaIngreso (nullable:false)
         fechaAlta (nullable:false)
         comentario (nullable:false)

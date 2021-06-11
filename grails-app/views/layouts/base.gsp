@@ -138,10 +138,10 @@
                             </a>
                             <ul class="list-unstyled full-box">
                                 <li>
-                                    <a href="school.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Cl&iacute;nica</a>
+                                    <a href="/clinica/index"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Cl&iacute;nica</a>
                                 </li>
                                 <li>
-                                    <a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Hospital </a>
+                                    <a href="/hospital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Hospital </a>
                                 </li>
                             </ul>
                         </li>
@@ -155,7 +155,13 @@
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Signos Vitales <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
+                             </a>
+                                <ul>
+                                    <li>
+                                        <a href="/SignoVital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Signos vitales </a>
+                                    </li>
+                                </ul>
+                           
                         </li>
 
                         <li>
@@ -165,9 +171,15 @@
                         </li>
 
                         <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-case zmdi-hc-fw"></i> Consulta M&eacute;dica <i class="zmdi zmdi-caret-down pull-right"></i>
+                            <a href="#!" class="btn-sideBar-SubMenu"> 
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i> Consulta M&eacute;dica </i>
                             </a>
+                                <ul>
+                                    <li>
+                                        <a href="/consulta/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>Consulta </a>
+                                    </li>
+                                </ul>
+                           
                         </li>
 
                         <g:if test="${session.usuario}">
@@ -198,6 +210,11 @@
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
+                            <ul class="list-unstyled full-box">
+                                <li>
+                                    <a href="/TratamientoMedico/index"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Tratamientos </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li>

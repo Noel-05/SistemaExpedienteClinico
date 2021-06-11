@@ -4,7 +4,7 @@ class Via {
     Long id
     String nombre
     static constraints = {
-        id (nullable:false)
+        //id (nullable:false)
         nombre (nullable:false)
     }
     static mapping={
