@@ -7,7 +7,7 @@ class Sintoma {
     Integer diasConMalestar
     String descripcion
 
-    static mappedBy = [idConsulta: "id"]
+    static mappedBy = [idConsulta: "idConsulta"]
 
     static constraints = {
         idConsulta(nullable: false)
