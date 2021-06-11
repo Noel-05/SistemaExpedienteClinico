@@ -1,19 +1,22 @@
 package sistemaclinico
 
-class Pruebauno {
-    Long version
-    Long id
+class PruebaUno {
     
-    Long codigo_prueba_uno
+    Long id
     String nombre_prueba_uno
     String titulo_prueba_uno
 
     static constraints = {
-        nombre_prueba_uno maxSize: 100
-        titulo_prueba_uno maxSize: 100
+        nombre_prueba_uno(nullable:false)
+        titulo_prueba_uno(nullable:false)
+        id(nullable:true)
     }
     
-    String toString() {
-        nombre_prueba_uno
+    static mapping = {
+        table "PRUEBAUNO"
+        version false
+        id column: "CODIGO_PRUEBA_UNO"
+        nombre_prueba_uno column: "NOMBRE_PRUEBA_UNO"
+        titulo_prueba_uno column: "TITULO_PRUEBA_UNO"
     }
 }

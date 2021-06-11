@@ -7,7 +7,6 @@
     </head>
     
     <body>
-        
         <!-- Agregar esto como Título del Template -->
         <font face="small fonts" size="10" color="#049286">
             <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.create.label" args="[entityName]" /></h1>
@@ -40,7 +39,6 @@
 
                         <!-- Agregar aquí los campos correspondientes del formulario. -->
                         <!-- <f:all bean="usuario"/> -->
-
                         <div class="fieldcontain ${hasErrors(bean: usuario.username, field: 'username', 'error')} ">
                             <label for="username">
                                 <g:message code="usuario.username.label" default="Usuario: " />
@@ -52,14 +50,18 @@
                             <label for="pass">
                                 <g:message code="usuario.pass.label" default="Contraseña: " />
                             </label></br>
-                            <g:passwordField name="pass" required="true" value="${usuario?.pass}" class="form-control" style="width:35%; display:inline;"/>
+                            <input type="password" name="pass" class="form-control" value="${usuario?.pass}" style="width:35%; display:inline;" required="True" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_.]).{8,}" title="La Contraseña debe contener almenos una Letra Mayúscula, un Dígito, un Número, un Simbolo Especial y un minímo de 8 carácteres." minlength="8"/>
                         </div>
 
                         <div class="fieldcontain ${hasErrors(bean: usuario.estadoEmpelado, field: 'estadoEmpelado', 'error')} ">
                             <label for="estadoEmpelado">
                                 <g:message code="usuario.estadoEmpelado.label" default="Estado Usuario: " />
                             </label></br>
-                            <g:textField name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" />
+                            <select name="estadoEmpelado" id="estadoEmpelado" class="form-control col-4 col-sm-4 input-style" title="Seleccionel estado del usuario."  style="display:inline;" required="True">
+                                <option selected value="1">Activo</option>
+                                <option value="2">Desactivo</option>
+                            </select></br>
+                            <!-- <g:textField name="estadoEmpelado" value="1" class="form-control" style="width:35%; display:inline;" /> -->
                         </div>
 
                         </br>

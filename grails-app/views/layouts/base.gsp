@@ -106,56 +106,52 @@
                                 </li>
                             </g:if>
                         </g:if>
-                            
+
                         <li>
                             <g:link controller="cita" action="index">
                                 <i class="zmdi zmdi-book zmdi-hc-fw"></i> Citas M&eacute;dicas
                             </g:link>
                         </li>
-                        
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                            <ul class="list-unstyled full-box">
-                                <li>
-                                    <a href="salon.html"><i class="zmdi zmdi-accounts-list zmdi-hc-fw"></i> Consultar</a>
-                                </li>
-                                <li>
-                                    <a href="period.html"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Registrar </a>
-                                </li>
-                                <li>
-                                    <a href="subject.html"><i class="zmdi zmdi-edit zmdi-hc-fw"></i> Editar </a>
-                                </li>
-                                <li>
-                                    <a href="section.html"><i class="zmdi zmdi-delete zmdi-hc-fw"></i> Eliminar</a>
-                                </li>
-                            </ul>
-                        </li>
 
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                                <li>
+                                    <g:link controller="persona" action="index">
+                                        <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente </i>
+                                    </g:link>
+                                </li>
+                            </g:if>
+                        </g:if>
 
-                        </li>
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                                <li>
+                                    <g:link controller="expediente" action="index">
+                                        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico</i>
+                                    </g:link>
 
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-card zmdi-hc-fw"></i> Historial Cl&iacute;nico <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                        </li>
-
+                                </li>
+                            </g:if>
+                        </g:if>
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                                <li>
+                                    <g:link controller="historialClinico" action="index">
+                                        <i class="zmdi zmdi-card zmdi-hc-fw"></i> Historial Cl&iacute;nico</i>
+                                    </g:link>
+                                </li>
+                            </g:if>
+                        </g:if>
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Instalaciones <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                             <ul class="list-unstyled full-box">
                                 <li>
-                                    <a href="school.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Cl&iacute;nica</a>
+                                    <a href="/clinica/index"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Cl&iacute;nica</a>
                                 </li>
                                 <li>
-                                    <a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Hospital </a>
+                                    <a href="/hospital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Hospital </a>
                                 </li>
                             </ul>
                         </li>
@@ -169,20 +165,36 @@
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Signos Vitales <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
+                             </a>
+                                <ul>
+                                    <li>
+                                        <a href="/SignoVital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Signos vitales </a>
+                                    </li>
+                                </ul>
+                           
                         </li>
 
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-case zmdi-hc-fw"></i> Consulta M&eacute;dica <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
+                                <ul>
+                                    <li>
+                                        <a href="/consulta/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>Consulta </a>
+                                    </li>
+                                </ul>
+                           
                         </li>
 
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-face zmdi-hc-fw"></i> Sintomatolog&iacute;a <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                        </li>
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                <li>
+                                    <g:link controller="sintoma" action="index">
+                                        <i class="zmdi zmdi-account zmdi-hc-fw"></i> Sintomatología
+                                    </g:link>
+                                </li>
+                            </g:if>
+                        </g:if>
 
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
@@ -202,6 +214,11 @@
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
+                            <ul class="list-unstyled full-box">
+                                <li>
+                                    <a href="/TratamientoMedico/index"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Tratamientos </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li>

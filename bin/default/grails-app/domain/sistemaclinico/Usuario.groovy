@@ -17,8 +17,9 @@ class Usuario {
     }
     
     static mapping = {
-        table "USUARIO"
+        idRol lazy:false
         version false
+        table "USUARIO"
         username column: "USERNAME"
         pass column: "PASSWORD"
         estadoEmpelado column: "ESTADOEMPLEADO"

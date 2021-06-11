@@ -10,8 +10,11 @@ class RolUsuarioController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond rolUsuarioService.list(params), model:[rolUsuarioCount: rolUsuarioService.count()]
+        // Agregar estó
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        [rolUsuarioInstanceList: RolUsuario.list(params), rolUsuarioInstanceTotal: RolUsuario.count()]
+        //params.max = Math.min(max ?: 10, 100)
+        //respond rolUsuarioService.list(params), model:[rolUsuarioCount: rolUsuarioService.count()]
     }
     
     def list() {
@@ -43,7 +46,7 @@ class RolUsuarioController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'rolUsuario.label', default: 'RolUsuario'), rolUsuario.id])
-                redirect rolUsuario
+                redirect action:"index"
             }
             '*' { respond rolUsuario, [status: CREATED] }
         }

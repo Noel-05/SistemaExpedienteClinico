@@ -58,8 +58,6 @@
                     </label></br>
                     <g:textField name="idRol" required="true" readonly="true" value="${usuario?.idRol}" class="form-control" style="width:35%; display:inline;"/>
                 </div>
-
-            
                 <g:form resource="${this.usuario}" method="DELETE">
                     <fieldset>
                         <button type="button" class="btn btn-outline-success" href="${createLink(controller:'usuario', action:'list')}" style="background-color:#009688; color:white;"><g:link class="edit" action="edit" resource="${this.usuario}" style="text-decoration:none; color:white;"><g:message code="default.button.edit.label" default="Edit" /></g:link></button>

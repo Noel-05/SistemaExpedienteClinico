@@ -18,7 +18,7 @@ class ExamenClinico {
         comentarios(unique: false, nullable: false, blank: false)
         idTipoExamen(nullable: false)
         idDetalleExamen(nullable: false)
-    };
+    }
 
     static mapping = {
         idTipoExamen lazy: false
@@ -29,5 +29,5 @@ class ExamenClinico {
         nombre column: "NOMBRE"
         fechaRealizado column: "FECHAREALIZADO"
         comentarios column: "COMENTARIOS"
-    };
+    }
 }
