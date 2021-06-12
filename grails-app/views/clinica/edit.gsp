@@ -47,13 +47,14 @@
                             </label></br>
                             <g:textField name="idConsulta" required="false" value="${clinica?.direccion}" class="form-control" style="width:35%; display:inline;"/>
                         </div>
-                         <div class="fieldcontain ${hasErrors(bean: clinica.id, field: 'id', 'error')} ">
-                          <label for="inicioOperaciones">
-                             <g:message code="clinica.inicioOperaciones.label" default="inicioOperaciones: " />
-                             </label>
+                        <div class="fieldcontain ${hasErrors(bean: clinica.id, field: 'id', 'error')} ">
+                            <label for="inicioOperaciones">
+                                <g:message code="clinica.inicioOperaciones.label" default="inicioOperaciones: " />
+                            </label>
                             <div class="col-8">
                                 <input value="${clinica?.inicioOperaciones}" id="inicioOperaciones" name="inicioOperaciones" placeholder="Elegir fecha de creación de la clinica." type="date" required="required" class="form-control">
                             </div>
+                        </div>
                     </fieldset>
                     </br>
                     <fieldset class="buttons">
