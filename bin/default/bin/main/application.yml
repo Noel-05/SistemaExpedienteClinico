@@ -110,7 +110,8 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:oracle:thin:@dbexpediente_high?TNS_ADMIN=C:/wallet
+            url: jdbc:oracle:thin:@dbexpediente_high?TNS_ADMIN=/home/andres/Documentos/wallet/
+            #url: jdbc:oracle:thin:@dbexpediente_high?TNS_ADMIN=C:/wallet
             #url: jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=gb789d530728bbf_dbexpediente_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))
     test:
         dataSource:
@@ -138,3 +139,15 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+grails:
+     mail:
+          host: "smtp.gmail.com"
+          port: 465
+          username: "expedienteclinicomorag@gmail.com"
+          password: "Expediente2021."
+          props:
+              mail.smtp.auth: "true"
+              mail.smtp.socketFactory.port: "465"
+              mail.smtp.socketFactory.class: "javax.net.ssl.SSLSocketFactory"
+              mail.smtp.socketFactory.fallback: "false"

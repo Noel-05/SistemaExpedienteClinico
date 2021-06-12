@@ -23,6 +23,7 @@ class ExamenClinico {
 
     static mapping = {
         table: "EXAMENCLINICO"
+        version false
         id column: "IDEXAMENCLINICO"
         nombreExamenClinico column: "NOMBREEXAMENCLINICO"
         fechaRealizado column: "FECHAREALIZADO"

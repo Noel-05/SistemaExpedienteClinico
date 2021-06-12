@@ -40,20 +40,20 @@
                                 <g:message code="examenClinico.nombreExamenClinico.label" default="Nombre del examen: " />
                             </label></br>
                             <g:textField name="nombreExamenClinico" required="true" value="${this.examenClinico.nombreExamenClinico}" class="form-control" style="width:35%; display:inline;" />
-                    </div>
+                        </div>
                         <div class="fieldcontain ${hasErrors(bean: examenClinico.fechaRealizado, field: 'fechaRealizado', 'error')} ">
                             <label for="fechaRealizado">
                                 <g:message code="examenClinico.fechaRealizado.label" default="Fecha de realización: " />
                             </label></br>
                             <g:field type="date" name="fechaRealizado" required="true" value="${this.examenClinico.fechaRealizado}" class="form-control" style="width:35%; display:inline;" />
-                    </div>
-                    <div class="fieldcontain ${hasErrors(bean: examenClinico.comentarios, field: 'comentarios', 'error')} ">
+                        </div>
+                        <div class="fieldcontain ${hasErrors(bean: examenClinico.comentarios, field: 'comentarios', 'error')} ">
                             <label for="comentarios">
                                 <g:message code="examenClinico.comentarios.label" default="Comentarios: " />
                             </label></br>
                             <g:textField name="comentarios" required="true" value="${this.examenClinico.comentarios}" class="form-control" style="width:35%; display:inline;" />
-                    </div>
-                    <f:field bean="examenClinico" property="idCita" label="Nombre del paciente:"/></br>
+                        </div>
+                        <f:field bean="examenClinico" property="idCita" label="Nombre del paciente:"/></br>
                     </fieldset>
                     <fieldset class="buttons">
                     <g:submitButton name="create" class="btn btn-outline-success" value="${message(code: 'default.button.create.label', default: 'Create')}" style="background-color:#009688; color:white;"/>
