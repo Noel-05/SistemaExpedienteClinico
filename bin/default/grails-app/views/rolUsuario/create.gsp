@@ -45,12 +45,16 @@
                             </label></br>
                             <g:textField name="nombreRol" required="true" value="${rolUsuario?.nombreRol}" class="form-control" style="width:35%; display:inline;" />
                         </div>
-
+                        
                         <div class="fieldcontain ${hasErrors(bean: rolUsuario.estadoEmpleado, field: 'estadoEmpleado', 'error')} ">
                             <label for="estadoEmpleado">
                                 <g:message code="rolUsuario.estadoEmpleado.label" default="Estado del Rol: " />
                             </label></br>
-                            <g:textField name="estadoEmpleado" value="1" class="form-control" style="width:35%; display:inline;" />
+                            <select name="estadoEmpleado" id="estadoEmpleado" class="form-control col-4 col-sm-4 input-style" title="Seleccione el estado del rol."  style="display:inline;" required="True">
+                                <option selected value="1">Activo</option>
+                                <option value="2">Desactivo</option>
+                            </select></br>
+                            <!-- <g:textField name="estadoEmpleado" value="1" class="form-control" style="width:35%; display:inline;" /> -->
                         </div>
                         
                     </fieldset>

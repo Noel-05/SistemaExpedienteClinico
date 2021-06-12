@@ -6,7 +6,7 @@
         <title>Lista | Paciente</title>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" style="text-align:center; margin: 0 auto;">
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
@@ -30,10 +30,7 @@
                             </g:if>
                         </div>
                         
-                        <div class="card">
-                            <div class="card-header">
-                                Pacientes registrados en el sistema
-                            </div>
+                        <div >
                             <div class="card-body px-0 pt-0">
                                 <div class="table-responsive" style="width:80%; display:inline-block;">
                                     <table  class="table table-hover text-center ml-5 mt-2">

@@ -10,19 +10,15 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Pacientes</li>
-                            </ol>
-                        </div>
+                <!-- Agregar esto como Título del Template -->
+                    <font face="small fonts" size="10" color="#049286">
+                        <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list" args="[entityName]" default="Listado de Pacientes"/></h1>
+                    </font>
+                    
+                    <!-- Agregar esto para el botón de Nuevo Registro -->
+                    <div class="container" align="center">
+                        <button type="button" class="btn btn-outline-success" href="${createLink(controller:'persona', action:'create')}" style="background-color:#009688; color:white;"><g:link action="create" style="text-decoration:none; color:white;"><g:message code="Agregar nuevo" args="[entityName]" /></g:link></button>
                     </div>
-
                 </div>
             </div>
             <section class="content">
@@ -37,15 +33,11 @@
                         <div class="card">
                             <div class="card-header">
                                 Pacientes registrados en el sistema
-                                <div class="btn-group">
-                                    <button  class="btn btn-sm btn-outline-succes" aria-expanded="false" href="${createLink(controller:'persona', action:'create')}" style="background-color:#009688; color:white;"><g:link action="create" style="text-decoration:none; color:white;"><g:message code="Crear nuevo" args="[entityName]" default="Agregar nuevo"/></g:link>
-                                    </button>
-                                </div>
                             </div>
                             <div class="card-body px-0 pt-0">
                                 <div class="table-responsive" style="width:80%; display:inline-block;">
                                     <table  class="table table-hover text-center ml-5 mt-2">
-                                        <thead class="thead-light">
+                                        <thead >
                                             <tr>
                                                 <th scope="col" style="color:#009688;">#</th>
                                                 <th scope="col" style="color:#009688;">Código</th>
@@ -70,8 +62,8 @@
                                                     <g:form resource="${this.persona}" method="DELETE">
                                                         <g:link class="btn btn-success" controller="expediente" action="create" id="${p?.id}">Abrir Expediente </g:link>
                                                         <g:link controller="persona" action="show" id="${p.id}">Ver </g:link> |
-                                                        <g:link action="edit" controller="persona" id="${p?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link> |
-                                                        <g:link  type="submit" action="delete" controller="persona" id="${p?.id}" value="${message(code: 'Paciente eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Esta seguro? Se eliminara un registro')}');">Eliminar</g:link>
+                                                        <g:link action="edit" controller="persona" id="${p?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                                                        <button class="btn btn-danger" type="submit" action="delete" resource="${this.persona}" value="${message(code: 'Paciente eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Esta seguro? Se eliminara un registro')}');">Eliminar</button>
                                                     </g:form> 
                                                     </div>
                                                 </td>

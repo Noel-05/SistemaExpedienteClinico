@@ -10,7 +10,7 @@ class Archivo {
         idArchivo(unique: true, nullable: false, blank: false)
         ruta(unique: false, nullable: false, blank: false)
         fechaSubida(unique: false, nullable: false, blank: false)
-    };
+    }
 
     static mapping = {
         version: false
@@ -18,5 +18,5 @@ class Archivo {
         idArchivo column: "IDARCHIVO"
         ruta column: "RUTA"
         fechaSubida column: "FECHASUBIDA"
-    };
+    }
 }

@@ -23,6 +23,15 @@
                     </ul>
                 </g:hasErrors>
             <section class="content">
+            <!-- Agregar esto como Título del Template -->
+                <font face="small fonts" size="10" color="#049286">
+                    <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Editar paciente" args="[entityName]" /></h1>
+                </font>
+
+                <!-- Agregar esto para el botón Regresar -->
+                <div class="container" align="center">
+                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'persona', action:'index')}" style="background-color:#009688; color:white;"><g:link class="index" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+                </div>
                 <div class="container-fluid">
                     <div class="container w-75 p-3">
                         <div class="card">
@@ -43,7 +52,7 @@
                                             <div class="stepwizard-step">
                                                 <a href="#step-2" type="button" class="btn btn-default btn-circle"
                                                     disabled="disabled">2</a>
-                                                    <p>Datos de contacto</p>
+                                                    <p>Direccion</p>
                                             </div>
 
                                         </div>
@@ -58,7 +67,7 @@
                                                 <div class="form-group row">
                                                         <label class="col-4 col-form-label" for="nombres">Identificador:</label> 
                                                         <div class="col-8">
-                                                            <g:field value="${persona.id}" id="id" name="id" placeholder="001-RC" type="text" class="form-control" aria-describedby="idHelpBlock" required="required"/> 
+                                                            <input value="${persona.id}" id="id" name="id" placeholder="001-RC" type="text" class="form-control" aria-describedby="idHelpBlock" required="required"/> 
                                                             <span id="idHelpBlock" class="form-text text-muted">Ingresar el identificador</span>
                                                         </div>
                                                     </div>
@@ -82,10 +91,10 @@
                                                         <label for="estadoCivil" class="col-4 col-form-label">Estado civil:</label> 
                                                         <div class="col-8">
                                                           <select id="estadoCivil" name="estadoCivil" class="custom-select" aria-describedby="estadoCivilHelpBlock">
-                                                            <option value="${persona.estadoCivil}">Casado/a</option>
-                                                            <option value="${persona.estadoCivil}">Soltero/a</option>
-                                                            <option value="${persona.estadoCivil}">Viudo/a</option>
-                                                            <option value="${persona.estadoCivil}">Otro</option>
+                                                            <option value="0">Casado/a</option>
+                                                            <option value="1">Soltero/a</option>
+                                                            <option value="2">Viudo/a</option>
+                                                            <option value="3">Otro</option>
                                                           </select> 
                                                           <span id="estadoCivilHelpBlock" class="form-text text-muted">Seleccione el estado civil.</span>
                                                         </div>
@@ -136,7 +145,7 @@
                                                         <label for="idDepartamento" class="col-3 col-form-label">Departamento:</label> 
                                                         <div class="col-9">
                                                         <select id="idDepartamento" name="idDepartamento" class="custom-select" aria-describedby="estadoCivilHelpBlock">
-                                                        <option value="0" selected disabled>Seleccionar Departamento...</option>
+                                                        <option value="${this.persona?.idDireccion.idMunicipio.idDepartamento.id}" selected>${this.persona?.idDireccion.idMunicipio.idDepartamento.nombre}</option>
                                                         <g:each var="i" in="${ departamentos }">
                                                             <option value="${i.id}">${i.nombre}</option><
                                                         </g:each>
@@ -148,7 +157,7 @@
                                                         <label for="idMunicipio" class="col-3 col-form-label">Municipio:</label> 
                                                         <div class="col-9">
                                                         <select id="idMunicipio" name="idMunicipio" class="custom-select" required>
-                                                            <option value="0" selected disabled>Seleccionar Municipio...</option>
+                                                            <option value="${this.persona?.idDireccion.idMunicipio.id}" selected>${this.persona?.idDireccion.idMunicipio.nombre}</option>
                                                             <g:each var="i" in="${ municipios }">
                                                                 <option value="${i.id}">${i.nombre}</option>
                                                             </g:each>

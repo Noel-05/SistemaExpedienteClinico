@@ -18,7 +18,7 @@ class AntecedentePersonal {
     static mapping = {
         table "ANTECEDENTEPERSONAL"
         version false
-        id column: "IDANTECEDENTEPERSONAL"
+        id column: "IDANTECEDENTEPERSONAL", generator: "sequence", params: [sequence:"ANTECEDENTE_PERSONAL_ID_SEQ"]
         sintoma column: "SINTOMA"
         iniciosSintoma column: "INICIOSINTOMA"
         automedicacion column: "AUTOMEDICACION"

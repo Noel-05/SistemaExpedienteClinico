@@ -11,6 +11,14 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
              <div class="row align-items-center justify-content-center">
+             <!-- Agregar esto como Título del Template -->
+                    <font face="small fonts" size="10" color="#049286">
+                        <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Detalles de antecedente personal" args="[entityName]" />${persona?.id}</h1>
+                    </font>
+				<div class="container" align="center">
+					<g:link class="btn btn-outline-success" aria-expanded="false" controller="antecedentePersonal" action="index" id="${antecedentePersonal?.idExpediente.id}" style="background-color:#009688; color:white;"> Regresar
+                    </g:link>
+				</div>
     <div class="col-lg-6 col-md-8">
         <div class="card">
             <div class="card-header">
@@ -36,9 +44,6 @@
                     </tbody>
                 </table>
 
-            </div>
-            <div class="card-footer">
-            <g:link style="background-color:#009688; color:white;" class="btn btn-info float-left" controller="antecedentePersonal" action="index" id="${antecedentePersonal?.idExpediente.id}">Regresar</g:link>
             </div>
         </div>
     </div>

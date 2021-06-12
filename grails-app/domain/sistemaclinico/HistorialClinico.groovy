@@ -20,7 +20,7 @@ class HistorialClinico {
     static mapping = {
         table "HISTORIALCLINICO"
         version false
-        id column: "IDHISTORIAL"
+        id column: "IDHISTORIAL", generator: "sequence", params: [sequence:"HISTORIAL_CLINICO_ID_SEQ"]
         nombre column: "NOMBRE"
         apellido column: "APELLIDO"
         fechaNacimiento column: "FECHANACIMIENTO"
