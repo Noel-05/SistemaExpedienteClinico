@@ -6,9 +6,11 @@ class UsuarioInterceptor {
     UsuarioInterceptor() {
         matchAll().excludes(controller: 'usuario', action: 'login')
                   .excludes(controller: 'usuario', action: 'validarLogin')
-                  .excludes(controller: 'usuario', action: 'create')
+                  //.excludes(controller: 'usuario', action: 'create')
                   .excludes(controller: 'usuario', action: 'save')
                   .excludes(controller: 'usuario', action: 'usuariologin')
+                  .excludes(controller: 'envioCorreo', action: 'index')
+                  .excludes(controller: 'envioCorreo', action: 'send')
       }
 
     boolean before() { 

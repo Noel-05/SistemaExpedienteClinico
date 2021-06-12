@@ -5,7 +5,7 @@ import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
 import spock.lang.*
 
-class PruebaunoControllerSpec extends Specification implements ControllerUnitTest<PruebaunoController>, DomainUnitTest<Pruebauno> {
+class PruebaUnoControllerSpec extends Specification implements ControllerUnitTest<PruebaUnoController>, DomainUnitTest<PruebaUno> {
 
     def populateValidParams(params) {
         assert params != null
@@ -17,7 +17,7 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
 
     void "Test the index action returns the correct model"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -26,8 +26,8 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         controller.index()
 
         then:"The model is correct"
-        !model.pruebaunoList
-        model.pruebaunoCount == 0
+        !model.pruebaUnoList
+        model.pruebaUnoCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -35,7 +35,7 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         controller.create()
 
         then:"The model is correctly created"
-        model.pruebauno!= null
+        model.pruebaUno!= null
     }
 
     void "Test the save action with a null instance"() {
@@ -45,14 +45,14 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         controller.save(null)
 
         then:"A 404 error is returned"
-        response.redirectedUrl == '/pruebauno/index'
+        response.redirectedUrl == '/pruebaUno/index'
         flash.message != null
     }
 
     void "Test the save action correctly persists"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
-            1 * save(_ as Pruebauno)
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
+            1 * save(_ as PruebaUno)
         }
 
         when:"The save action is executed with a valid instance"
@@ -60,38 +60,38 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'POST'
         populateValidParams(params)
-        def pruebauno = new Pruebauno(params)
-        pruebauno.id = 1
+        def pruebaUno = new PruebaUno(params)
+        pruebaUno.id = 1
 
-        controller.save(pruebauno)
+        controller.save(pruebaUno)
 
         then:"A redirect is issued to the show action"
-        response.redirectedUrl == '/pruebauno/show/1'
+        response.redirectedUrl == '/pruebaUno/show/1'
         controller.flash.message != null
     }
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
-            1 * save(_ as Pruebauno) >> { Pruebauno pruebauno ->
-                throw new ValidationException("Invalid instance", pruebauno.errors)
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
+            1 * save(_ as PruebaUno) >> { PruebaUno pruebaUno ->
+                throw new ValidationException("Invalid instance", pruebaUno.errors)
             }
         }
 
         when:"The save action is executed with an invalid instance"
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'POST'
-        def pruebauno = new Pruebauno()
-        controller.save(pruebauno)
+        def pruebaUno = new PruebaUno()
+        controller.save(pruebaUno)
 
         then:"The create view is rendered again with the correct model"
-        model.pruebauno != null
+        model.pruebaUno != null
         view == 'create'
     }
 
     void "Test the show action with a null id"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
             1 * get(null) >> null
         }
 
@@ -104,20 +104,20 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
 
     void "Test the show action with a valid id"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
-            1 * get(2) >> new Pruebauno()
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
+            1 * get(2) >> new PruebaUno()
         }
 
         when:"A domain instance is passed to the show action"
         controller.show(2)
 
         then:"A model is populated containing the domain instance"
-        model.pruebauno instanceof Pruebauno
+        model.pruebaUno instanceof PruebaUno
     }
 
     void "Test the edit action with a null id"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
             1 * get(null) >> null
         }
 
@@ -130,15 +130,15 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
 
     void "Test the edit action with a valid id"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
-            1 * get(2) >> new Pruebauno()
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
+            1 * get(2) >> new PruebaUno()
         }
 
         when:"A domain instance is passed to the show action"
         controller.edit(2)
 
         then:"A model is populated containing the domain instance"
-        model.pruebauno instanceof Pruebauno
+        model.pruebaUno instanceof PruebaUno
     }
 
 
@@ -149,14 +149,14 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         controller.update(null)
 
         then:"A 404 error is returned"
-        response.redirectedUrl == '/pruebauno/index'
+        response.redirectedUrl == '/pruebaUno/index'
         flash.message != null
     }
 
     void "Test the update action correctly persists"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
-            1 * save(_ as Pruebauno)
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
+            1 * save(_ as PruebaUno)
         }
 
         when:"The save action is executed with a valid instance"
@@ -164,31 +164,31 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'PUT'
         populateValidParams(params)
-        def pruebauno = new Pruebauno(params)
-        pruebauno.id = 1
+        def pruebaUno = new PruebaUno(params)
+        pruebaUno.id = 1
 
-        controller.update(pruebauno)
+        controller.update(pruebaUno)
 
         then:"A redirect is issued to the show action"
-        response.redirectedUrl == '/pruebauno/show/1'
+        response.redirectedUrl == '/pruebaUno/show/1'
         controller.flash.message != null
     }
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
-            1 * save(_ as Pruebauno) >> { Pruebauno pruebauno ->
-                throw new ValidationException("Invalid instance", pruebauno.errors)
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
+            1 * save(_ as PruebaUno) >> { PruebaUno pruebaUno ->
+                throw new ValidationException("Invalid instance", pruebaUno.errors)
             }
         }
 
         when:"The save action is executed with an invalid instance"
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'PUT'
-        controller.update(new Pruebauno())
+        controller.update(new PruebaUno())
 
         then:"The edit view is rendered again with the correct model"
-        model.pruebauno != null
+        model.pruebaUno != null
         view == 'edit'
     }
 
@@ -199,13 +199,13 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         controller.delete(null)
 
         then:"A 404 is returned"
-        response.redirectedUrl == '/pruebauno/index'
+        response.redirectedUrl == '/pruebaUno/index'
         flash.message != null
     }
 
     void "Test the delete action with an instance"() {
         given:
-        controller.pruebaunoService = Mock(PruebaunoService) {
+        controller.pruebaUnoService = Mock(PruebaUnoService) {
             1 * delete(2)
         }
 
@@ -215,7 +215,7 @@ class PruebaunoControllerSpec extends Specification implements ControllerUnitTes
         controller.delete(2)
 
         then:"The user is redirected to index"
-        response.redirectedUrl == '/pruebauno/index'
+        response.redirectedUrl == '/pruebaUno/index'
         flash.message != null
     }
 }

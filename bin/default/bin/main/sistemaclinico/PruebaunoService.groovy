@@ -2,17 +2,17 @@ package sistemaclinico
 
 import grails.gorm.services.Service
 
-@Service(Pruebauno)
-interface PruebaunoService {
+@Service(PruebaUno)
+interface PruebaUnoService {
 
-    Pruebauno get(Serializable id)
+    PruebaUno get(Serializable id)
 
-    List<Pruebauno> list(Map args)
+    List<PruebaUno> list(Map args)
 
     Long count()
 
     void delete(Serializable id)
 
-    Pruebauno save(Pruebauno pruebauno)
+    PruebaUno save(PruebaUno pruebaUno)
 
 }

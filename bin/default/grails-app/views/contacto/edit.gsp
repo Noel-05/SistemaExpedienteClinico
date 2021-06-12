@@ -18,14 +18,18 @@
             </ul>
             </g:hasErrors>
             <section class="content">
+            <!-- Agregar esto como Título del Template -->
+            <font face="small fonts" size="10" color="#049286">
+                <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Editar contacto" args="[entityName]" /></h1>
+            </font>
             <div class="container" align="center">
-					<g:link class="btn btn-outline-success" style="background-color:#009688; color:white;" controller="contacto" action="index" id="${contacto?.idPersona.id}">Regresar</g:link>
+				<g:link class="btn btn-outline-success" style="background-color:#009688; color:white;" controller="contacto" action="index" id="${contacto?.idPersona.id}">Regresar</g:link>
 			</div>
 				<div class="container-fluid">
 					<div class="container w-75 p-3">
 						<div class="card">
 							<div class="card-header">
-								Nuevo Contacto personal
+								Editar Contacto personal
 							</div>
 							<div class="card-body">
 								<div class="col-md-9" style="margin-left: 100px;">

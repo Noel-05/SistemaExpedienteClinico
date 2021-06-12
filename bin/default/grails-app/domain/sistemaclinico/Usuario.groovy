@@ -4,6 +4,7 @@ class Usuario {
     
     String username
     String pass
+    String correo
     Integer estadoEmpelado
     RolUsuario idRol
     
@@ -12,6 +13,7 @@ class Usuario {
     static constraints = {
         username(unique:true, nullable:false, blank:false)
         pass(nullable:false, blank:false, password:true)
+        correo(unique:true, nullable:false, blank:false, email:true)
         estadoEmpelado(nullable:true)
         idRol(nullable:false)
     }
@@ -22,6 +24,7 @@ class Usuario {
         table "USUARIO"
         username column: "USERNAME"
         pass column: "PASSWORD"
+        correo column: "CORREO"
         estadoEmpelado column: "ESTADOEMPLEADO"
         idRol column: "IDROL"
     }
