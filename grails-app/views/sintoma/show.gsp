@@ -52,10 +52,10 @@
                     </label></br>
                     <g:textField name="descripcion" readonly="true" value="${sintoma?.descripcion}" class="form-control" style="width:35%; display:inline;"/>
                 </div>
-                <g:form resource="${this.usuario}" method="DELETE">
+                <g:form resource="${this.sintoma}" method="DELETE">
                     <fieldset>
-                        <button type="button" class="btn btn-outline-success" href="${createLink(controller:'sintoma', action:'list')}" style="background-color:#009688; color:white;"><g:link class="edit" action="edit" resource="${this.usuario}" style="text-decoration:none; color:white;"><g:message code="default.button.edit.label" default="Edit" /></g:link></button>
-                        <input class="btn btn-outline-success" type="submit" value="${message(code: 'default.button.delete.label', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: '¿Está seguro de eliminar?')}');" style="background-color:#009688; color:white;"/>
+                        <button type="button" class="btn btn-outline-success" href="${createLink(controller:'sintoma', action:'list')}" style="background-color:#009688; color:white;"><g:link class="edit" action="edit" resource="${this.sintoma}" style="text-decoration:none; color:white;"><g:message code="default.button.edit.label" default="Edit" /></g:link></button>
+                        <input class="btn btn-outline-success" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" style="background-color:#009688; color:white;"/>
                     </fieldset>
                 </g:form>
             </div>

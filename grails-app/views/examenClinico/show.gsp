@@ -62,8 +62,8 @@
             </div></br>
             <g:form resource="${this.examenClinico}" method="DELETE">
                 <fieldset class="buttons">
-                    <g:link class="edit" action="edit" resource="${this.examenClinico}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                    <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'examenClinico', action:'list')}" style="background-color:#009688; color:white;"><g:link class="edit" action="edit" resource="${this.examenClinico}" style="text-decoration:none; color:white;"><g:message code="default.button.edit.label" default="Edit" /></g:link></button>
+                    <input class="btn btn-outline-success" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" style="background-color:#009688; color:white;"/>
                 </fieldset>
             </g:form>
         </div>

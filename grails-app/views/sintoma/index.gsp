@@ -41,7 +41,7 @@
                         <tbody>
                             <g:each in="${sintomaInstanceList}" status="i" var="sintomaInstance">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                    <td><g:link action="show" id="${sintomaInstance.idConsulta}">${fieldValue(bean: sintomaInstance, field: "idConsulta")}</g:link></td>
+                                    <td>${fieldValue(bean: sintomaInstance, field: "idConsulta")}</td>
                                     <td>${fieldValue(bean: sintomaInstance, field: "fechaInicio")}</td>
                                     <td>${fieldValue(bean: sintomaInstance, field: "diasConMalestar")}</td>
                                     <td>${fieldValue(bean: sintomaInstance, field: "descripcion")}</td>
