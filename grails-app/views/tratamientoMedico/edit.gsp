@@ -6,13 +6,14 @@
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#edit-tratamientoMedico" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+        <!-- Agregar esto como Título del Template -->
+        <font face="small fonts" size="10" color="#049286">
+            <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.edit.label" args="[entityName]" /></h1>
+        </font>
+        
+        <!-- Agregar esto para el botón Regresar -->
+        <div class="container" align="center">
+            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'sintoma', action:'list')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
         </div>
         <div id="edit-tratamientoMedico" class="content scaffold-edit" role="main">
             <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
@@ -29,7 +30,22 @@
             <g:form resource="${this.tratamientoMedico}" method="PUT">
                 <g:hiddenField name="version" value="${this.tratamientoMedico?.version}" />
                 <fieldset class="form">
-                    <f:all bean="tratamientoMedico"/>
+                    <div class="fieldcontain ${hasErrors(bean: tratamientoMedico.fechaAsignado, field: 'fechaAsignado', 'error')} ">
+                        <label for="inicioOperaciones">
+                            <g:message code="tratamientoMedico.fechaAsignado.label" default="fecha Asignado: " />
+                        </label>
+                        <div class="col-8">
+                            <input value="${tratamientoMedico?.fechaAsignado}" id="fechaAsignado" name="fechaAsignado" placeholder="Elegir fecha de creación del diagnostico" type="date" required="required" class="form-control">
+                        </div>
+                    </div>
+                    <div class="fieldcontain ${hasErrors(bean: tratamientoMedico.diagnostico, field: 'diagnostico', 'error')} ">
+                            <label for="diagnostico">
+                                <g:message code="tratamientoMedico.diagnostico.label" default="diagnostico: " />
+                            </label></br>
+                           
+                            <input value="${tratamientoMedico?.diagnostico}" id="fechaAsignado" name="fechaAsignado" placeholder="Elegir fecha de creación del diagnostico"  required="required" class="form-control">
+
+                        </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
