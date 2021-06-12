@@ -34,13 +34,13 @@
                         
                         <div class="card">
                             <div class="card-header">
-                                Expedientes registrados en el sistema
+                                Hospitales registrados en el sistema
                                 <div class="btn-group">
                                     
                                 </div>
                             </div>
                             <div class="card-body px-0 pt-0">
-                                <div class="table-responsive" style="width:80%; display:inline-block;">
+                                <div class="table-responsive" style="width:99%; display:inline-block;">
                                     <table class="table table-hover text-center ml-5 mt-2">
                                         <thead >
                                             <tr>
@@ -55,7 +55,7 @@
                                             <tr>
                                                 
                                                 <td> <g:link controller="hospital" action="show" id="${e?.id}"><g:message code="default.button.show.label" default="${e.nombre}" /></g:link> </td>
-                                                <td>${e.clinica}
+                                                <td>${e.clinica.nombre}</td>
                                             </tr>
                                             </g:each>
                                                

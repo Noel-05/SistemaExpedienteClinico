@@ -37,7 +37,7 @@
                                 Tratamientos registrados
                             </div>
                             <div class="card-body px-0 pt-0">
-                                <div class="table-responsive" style="width:80%; display:inline-block;">
+                                <div class="table-responsive" style="width:100%; display:inline-block;">
                                     <table  class="table table-hover text-center ml-5 mt-2">
                                         <thead >
                                             <tr>
@@ -52,7 +52,7 @@
                                         
                                             <g:each status="i" var="p" in="${tratamientoMedicoList}">
                                             <tr>
-                                                <td> <g:link controller="tratamientoMedico" action="show" id="${p.id}">${p?.diagnostico} </g:link> </td>
+                                                <td> <g:link controller="tratamientoMedico" action="show" id="${p.id}">${p?.diagnostico.codigoInternacional.nombreCodigo} </g:link> </td>
                                                 <td>${p?.fechaAsignado} </td>
                                                 <td>${p?.comentario} </td>
                                             </tr>

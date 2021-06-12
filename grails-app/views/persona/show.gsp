@@ -87,7 +87,7 @@
             </div>
             <div >
                 <div class="container" align="center">
-                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'persona', action:'index')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/>Regresar</g:link></button>
+                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'persona', action:'index')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
                 </div>
             </div>
         </div>

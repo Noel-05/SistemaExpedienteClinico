@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="base" />
         <g:set var="entityName" value="${message(code: 'clinica.label', default: 'Clinica')}" />
-        <title>Lista | Clinicas/></title>
+        <title>Lista | Clinicas</title>
     </head>
     <body>
         <div class="wrapper">
@@ -36,13 +36,13 @@
                                 Clinicas registradas en el sistema
                             </div>
                             <div class="card-body px-0 pt-0">
-                                <div class="table-responsive" style="width:80%; display:inline-block;">
+                                <div class="table-responsive" style="width:100%; display:inline-block;">
                                     <table  class="table table-hover text-center ml-5 mt-2">
                                         <thead >
                                             <tr>
                                                 <th scope="col" style="color:#009688;">Nombre</th>
                                                 <th scope="col" style="color:#009688;">direccion</th>
-                                                 <th scope="col" style="color:#009688;">inicio operaciones</th>
+                                                <th scope="col" style="color:#009688;">inicio operaciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -52,7 +52,7 @@
                                             <g:each status="i" var="p" in="${clinicaList}">
                                             <tr>
                                                 <td> <g:link controller="clinica" action="show" id="${p.id}">${p?.nombre} </g:link> </td>
-                                                <td>${p?.direccion} </td>
+                                                <td>Calle ${p?.direccion.calle}, Col. ${p?.direccion.colonia}, Psj ${p?.direccion.pasaje}, # ${p?.direccion.numeroLugar}, ${p?.direccion.idMunicipio.nombre}, ${p?.direccion.idMunicipio.idDepartamento.nombre}, ${p?.direccion.idMunicipio.idDepartamento.idPais.nombre}</td>
                                                 <td>${p?.inicioOperaciones} </td>
                             
                                             </tr>

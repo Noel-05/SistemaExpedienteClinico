@@ -7,6 +7,11 @@
     </head>
     <body>
         <div class="wrapper" style="text-align:center; margin: 0 auto;">
+            <!-- Agregar esto como Título del Template -->
+            <font face="small fonts" size="10" color="#049286">
+                <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list" args="[entityName]" default="Historial Clínico"/></h1>
+            </font>
+            
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
