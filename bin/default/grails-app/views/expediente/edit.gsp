@@ -18,9 +18,15 @@
             </ul>
             </g:hasErrors>
             <section class="content">
-			<div class="container" align="center">
-					<g:link class="btn btn-outline-success" style="background-color:#009688; color:white;" controller="persona" action="index">Regresar</g:link>
-			</div>
+			<!-- Agregar esto como Título del Template -->
+                <font face="small fonts" size="10" color="#049286">
+                    <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Editar expediente" args="[entityName]" /></h1>
+                </font>
+
+                <!-- Agregar esto para el botón Regresar -->
+                <div class="container" align="center">
+                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'expediente', action:'index')}" style="background-color:#009688; color:white;"><g:link class="index" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+                </div>
 				<div class="container-fluid">
 					<div class="container w-75 p-3">
 						<div class="card">

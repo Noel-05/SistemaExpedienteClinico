@@ -32,27 +32,29 @@
                         <thead>
                             <tr>
                                 <g:sortableColumn property="idExamenClinico" title="${message(code: 'examenClinico.idExamenClinico.label', default: 'ID del examen')}" />
-                                <g:sortableColumn property="fechaInicio" title="${message(code: 'sintoma.fechaInicio.label', default: 'Fecha de inicio de los síntomas')}"/>
-                                <g:sortableColumn property="diasConMalestar" title="${message(code: 'sintoma.diasConMalestar.label', default: 'Días con malestar')}" />
-                                <g:sortableColumn property="descripcion" title="${message(code: 'sintoma.descripcion.label', default: 'Descripción')}" />
+                                <g:sortableColumn property="nombreExamenClinico" title="${message(code: 'examenClinico.nombreExamenClinico.label', default: 'Nombre del examen')}"/>
+                                <g:sortableColumn property="fechaRealizado" title="${message(code: 'examenClinico.fechaRealizado.label', default: 'Fecha de realización')}" />
+                                <g:sortableColumn property="comentarios" title="${message(code: 'examenClinico.comentarios.label', default: 'Comentarios')}" />
+                                <g:sortableColumn property="idCita" title="${message(code: 'examenClinico.idCita.label', default: 'Nombre del paciente')}" />
                                 <th style="color:#009688;">Opcion</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <g:each in="${sintomaInstanceList}" status="i" var="sintomaInstance">
+                            <g:each in="${examenClinicoInstanceList}" status="i" var="examenClinicoInstance">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                    <td><g:link action="show" id="${sintomaInstance.idConsulta}">${fieldValue(bean: sintomaInstance, field: "idConsulta")}</g:link></td>
-                                    <td>${fieldValue(bean: sintomaInstance, field: "fechaInicio")}</td>
-                                    <td>${fieldValue(bean: sintomaInstance, field: "diasConMalestar")}</td>
-                                    <td>${fieldValue(bean: sintomaInstance, field: "descripcion")}</td>
+                                    <td>${fieldValue(bean: examenClinicoInstance, field: "id")}</td>
+                                    <td>${fieldValue(bean: examenClinicoInstance, field: "nombreExamenClinico")}</td>
+                                    <td>${fieldValue(bean: examenClinicoInstance, field: "fechaRealizado")}</td>
+                                    <td>${fieldValue(bean: examenClinicoInstance, field: "comentarios")}</td>
+                                    <td>${fieldValue(bean: examenClinicoInstance, field: "idCita")}</td>
                                         
-                                    <f:display bean="sintoma" />
-                                    <g:form resource="${sintomaInstance.id}" method="DELETE">
+                                    <%-- <f:display bean="examenClinico" /> --%>
+                                    <g:form resource="${examenClinicoInstance.id}" method="DELETE">
                                         <td><fieldset class="buttons">
-                                            <g:link action="edit" id="${sintomaInstance.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link>
+                                            <g:link action="edit" id="${examenClinicoInstance.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link>
                                             |
-                                            <g:link action="show" id="${sintomaInstance.id}"><g:message code="default.button.show.label" default="Eliminar" /></g:link>
+                                            <g:link action="show" id="${examenClinicoInstance.id}"><g:message code="default.button.show.label" default="Eliminar" /></g:link>
                                         </fieldset></td>
                                     </g:form>
                                 </tr>

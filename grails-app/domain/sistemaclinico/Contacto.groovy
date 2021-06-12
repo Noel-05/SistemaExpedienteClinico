@@ -16,7 +16,7 @@ class Contacto {
     static mapping = {
         table "CONTACTO"
         version false
-        id column: "ID"
+        id column: "ID", generator: "sequence", params: [sequence:"CONTACTO_ID_SEQ"]
         telefono column: "TELEFONOCONTACTO"
         correo column: "CORREOCONTACTO"
         idPersona column: "IDPERSONA"

@@ -19,7 +19,7 @@ class Direccion {
     static mapping = {
         table "DIRECCION"
         version false
-        id column: "IDDIRECCION"
+        id column: "IDDIRECCION", generator: "sequence", params: [sequence:"DIRECCION_ID_SEQ"]
         calle column: "CALLE"
         colonia column: "COLONIA"
         pasaje column: "PASAJE"

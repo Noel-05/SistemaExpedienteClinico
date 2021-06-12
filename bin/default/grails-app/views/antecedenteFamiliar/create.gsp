@@ -19,6 +19,10 @@
             </ul>
             </g:hasErrors>
             <section class="content">
+			<!-- Agregar esto como Título del Template -->
+            <font face="small fonts" size="10" color="#049286">
+                <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Crear informacion familiar" args="[entityName]" />${persona?.id}</h1>
+            </font>
 				<div class="container" align="center">
 					<g:link class="btn btn-outline-success" style="background-color:#009688; color:white;" controller="expediente" action="show" id="${expediente}">Regresar</g:link>
 				</div>

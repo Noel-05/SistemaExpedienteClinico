@@ -6,23 +6,11 @@
         <title>Historial | Paciente</title>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" style="text-align:center; margin: 0 auto;">
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Historial Clinico</li>
-                            </ol>
-                        </div>
-                    </div>
-
+                    
                 </div>
             </div>
             <section class="content">
@@ -34,9 +22,7 @@
                             </g:if>
                         </div>
                         
-                        <div class="card">
-                            <div class="card-header">
-                                Pacientes registrados en el sistema
+                        <div >
                             <div class="card-body px-0 pt-0">
                                 <div class="table-responsive" style="width:80%; display:inline-block;">
                                     <table class="table table-hover text-center ml-5 mt-2">

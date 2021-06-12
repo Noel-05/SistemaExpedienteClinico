@@ -10,19 +10,16 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Expedientes</li>
-                            </ol>
-                        </div>
+                    <!-- Agregar esto como Título del Template -->
+                    <font face="small fonts" size="10" color="#049286">
+                        <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list" args="[entityName]" default="Listado de Expedientes"/></h1>
+                    </font>
+                    
+                    <!-- Agregar esto para el botón de Nuevo Registro -->
+                    <div class="container" align="center">
+                    <g:link class="btn btn-success" aria-expanded="false" controller="persona" action="index" style="background-color:#009688; color:white;"> Agregar nuevo
+                                    </g:link>
                     </div>
-
                 </div>
             </div>
             <section class="content">
@@ -38,14 +35,13 @@
                             <div class="card-header">
                                 Expedientes registrados en el sistema
                                 <div class="btn-group">
-                                    <g:link class="btn btn-sm btn-outline-success" aria-expanded="false" controller="persona" action="index" style="background-color:#009688; color:white;"> Agregar nuevo
-                                    </g:link>
+                                    
                                 </div>
                             </div>
                             <div class="card-body px-0 pt-0">
                                 <div class="table-responsive" style="width:80%; display:inline-block;">
                                     <table class="table table-hover text-center ml-5 mt-2">
-                                        <thead class="thead-light">
+                                        <thead >
                                             <tr>
                                                 <th scope="col" style="color:#009688;">#</th>
                                                 <th scope="col" style="color:#009688;">Fecha de creación</th>

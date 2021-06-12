@@ -20,8 +20,8 @@
                 <button type="button" class="btn btn-outline-success" href="${createLink(controller:'historialClinico', action:'index')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
             </div>
             <div class="w-50 p-3">
-                <div class="card ">
-                    <div class="card-header">
+                <div >
+                    <div >
                         <button class="btn btn-lg btn-link navbar-left" aria-expanded="true">
                             Historial Clínico de <strong>${paciente?.nombres} ${paciente?.apellidos} </strong>
                         </button>

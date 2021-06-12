@@ -30,8 +30,8 @@ class Cita {
         apellidopac column: "APELLIDOPAC"
         idMotivo column: "IDMOTIVO"
     }
-    
+
     String toString(){
-        "${idMotivo}"
+        "$nombrepac $apellidopac"
     }
 }

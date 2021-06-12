@@ -19,6 +19,10 @@
             </ul>
             </g:hasErrors>
             <section class="content">
+			<!-- Agregar esto como Título del Template -->
+            <font face="small fonts" size="10" color="#049286">
+                <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Editar antecedente persnal" args="[entityName]" /></h1>
+            </font>
 			<div class="container" align="center">
 					<g:link class="btn btn-outline-success" style="background-color:#009688; color:white;" controller="antecedentePersonal" action="index" id="${this.antecedentePersonal?.idExpediente.id}">Regresar</g:link>
 			</div>
