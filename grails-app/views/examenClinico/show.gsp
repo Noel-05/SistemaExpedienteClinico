@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="base" />
-        <g:set var="entityName" value="${message(code: 'examenClinico.label', default: 'ExamenClinico')}" />
+        <g:set var="entityName" value="${message(code: 'examenClinico.label', default: 'Examen Clínico')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -48,14 +48,8 @@
                 </label></br>
                 <g:textField name="comentarios" readonly="true" value="${examenClinico?.comentarios}" class="form-control" style="width:35%; display:inline;"/>
             </div>
-            <div class="fieldcontain ${hasErrors(bean: examenClinico.nombreExamenClinico, field: 'nombreExamenClinico', 'error')} ">
-                <label for="nombreExamenClinico">
-                    <g:message code="examenClinico.nombreExamenClinico.label" default="Nombre del examen: " />
-                </label></br>
-                <g:textField name="nombreExamenClinico" readonly="true" value="${examenClinico?.nombreExamenClinico}" class="form-control" style="width:35%; display:inline;"/>
-            </div>
             <div class="fieldcontain ${hasErrors(bean: examenClinico.idCita, field: 'idCita', 'error')} ">    
-                <label for="nombreExamenClinico">
+                <label for="idCita">
                     <g:message code="examenClinico.idCita.label" default="Nombre del paciente: " />
                 </label></br>
                 <g:textField name="idCita" readonly="true" value="${examenClinico?.idCita}" class="form-control" style="width:35%; display:inline;"/>

@@ -98,6 +98,7 @@ hibernate:
         use_second_level_cache: false
         use_query_cache: false
 dataSource:
+    dbCreate: update
     pooled: true
     jmxExport: true
     driverClassName: oracle.jdbc.OracleDriver

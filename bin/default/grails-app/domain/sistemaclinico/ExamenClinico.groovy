@@ -32,4 +32,8 @@ class ExamenClinico {
         idCita column: "IDCITA"
         idDiagnostico column: "IDDIAGNOSTICO"
     }
+
+    String toString(){
+        "$id"
+    }
 }

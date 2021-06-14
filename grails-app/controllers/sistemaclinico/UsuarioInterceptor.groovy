@@ -43,15 +43,27 @@ class UsuarioInterceptor {
             return false
             
         }else if(
-            (session.usuario.idRol.nombreRol.equals("Paciente") ) 
+            (session.usuario.idRol.nombreRol.equals("Medico") ||
+                session.usuario.idRol.nombreRol.equals("Secretaria") ) 
+              && ( ((controllerName.equals("examenClinico")) && (actionName.equals('show') || actionName.equals('create') || actionName.equals('edit') || actionName.equals('delete') ) ) || 
+                    ((controllerName.equals("persona")) && (actionName.equals('show') || actionName.equals('edit') || actionName.equals('delete') ) ) ||
+                    ((controllerName.equals("clinica")) && (actionName.equals('show') || actionName.equals('create') || actionName.equals('edit') || actionName.equals('delete') ) ) ||
+                    ((controllerName.equals("hospital")) && (actionName.equals('show') || actionName.equals('create') || actionName.equals('edit') || actionName.equals('delete') ) ) ) ) {
+            
+            redirect(controller:'usuario', action:'login')
+            return false
+        
+        }else if(
+            (session.usuario.idRol.nombreRol.equals("Paciente") )
               && (controllerName.equals("examenClinico") || 
-                    controllerName.equals("persona") || 
+                    ((controllerName.equals("cita")) && (actionName.equals('show') || actionName.equals('edit') || actionName.equals('delete') ) ) ||
+                    controllerName.equals("persona") ||
                     controllerName.equals("clinica") || 
                     controllerName.equals("hospital") ) ) {
             
             redirect(controller:'usuario', action:'login')
             return false
-        
+            
         }
         //(controllerName.equals("clinica") && (actionName.equals('create') || actionName.equals('show') || actionName.equals('edit') || actionName.equals('delete')) ) || 
         //(controllerName.equals("hospital") && (actionName.equals('create') || actionName.equals('show') || actionName.equals('edit') || actionName.equals('delete')) ) ) ) {
