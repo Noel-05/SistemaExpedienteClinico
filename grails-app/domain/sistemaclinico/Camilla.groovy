@@ -18,4 +18,8 @@ class Camilla {
         habitacion column:"IDHABITACION"
         disponible column:"DISPONIBLE"
     }
+
+    String toString(){
+         "${id}"
+    }
 }

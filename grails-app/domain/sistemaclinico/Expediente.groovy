@@ -20,4 +20,8 @@ class Expediente {
         fechaCreado column: "FECHACREADO"
         idPersona column: "IDPERSONA", generator: "foreign"
     }
+
+    String toString(){
+         "${id + fechaCreado}" 
+    }
 }
