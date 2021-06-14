@@ -55,7 +55,6 @@
 											  <span id="calleHelpBlock" class="form-text text-muted">Seleccionar la feccha en que dan inicio los sintomas presentados.</span>
 										  </div>
 									  </div>
-                                      </div>
 											<div class="form-group row">
 											<label for="automedicacion" class="col-4 col-form-label">Automedicacion: </label> 
 											<div class="col-8">

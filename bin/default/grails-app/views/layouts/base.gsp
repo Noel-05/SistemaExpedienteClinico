@@ -156,34 +156,22 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-money zmdi-hc-fw"></i> Costo Servicios <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-timer zmdi-hc-fw"></i> Signos Vitales <i class="zmdi zmdi-caret-down pull-right"></i>
-                             </a>
-                                <ul>
-                                    <li>
-                                        <a href="/SignoVital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Signos vitales </a>
-                                    </li>
-                                </ul>
-                           
-                        </li>
-
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-case zmdi-hc-fw"></i> Consulta M&eacute;dica <i class="zmdi zmdi-caret-down pull-right"></i>
+                            <a href="/SignoVital/index" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-timer zmdi-hc-fw"></i> - Signos Vitales
                             </a>
-                                <ul>
-                                    <li>
-                                        <a href="/consulta/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>Consulta </a>
-                                    </li>
-                                </ul>
-                           
+                        </li>
+
+                        <li>
+                            <a href="/consulta/index" class="btn-sideBar-SubMenu">
+                                <i class="zmdi zmdi-case zmdi-hc-fw"></i> - Consulta M&eacute;dica
+                            </a>
                         </li>
 
                         <g:if test="${session.usuario}">
@@ -201,18 +189,25 @@
                                 <i class="zmdi zmdi-book zmdi-hc-fw"></i> Examenes <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                             <ul class="list-unstyled full-box">
-                                <li>
-                                    <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Cl&iacute;nicos</a>
-                                </li>
-                                <li>
-                                    <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Fisicos </a>
-                                </li>
+                                    <%-- <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Cl&iacute;nicos</a> --%>
+                                    <g:if test="${session.usuario}">
+                                        <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                            <li>
+                                                <g:link controller="examenClinico" action="index">
+                                                <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Clínicos
+                                                </g:link>
+                                            </li>
+                                        </g:if>
+                                    </g:if>
+                                <!-- <li>
+                                    <a href=""><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Fisicos </a>
+                                </li> -->
                             </ul>
                         </li>
 
                         <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
+                                <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> - Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                             <ul class="list-unstyled full-box">
                                 <li>
@@ -221,28 +216,28 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-case-check zmdi-hc-fw"></i> Asignar Diagnosticos <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
-                        </li>
+                        </li> -->
 
-                        <li>
+                        <!-- <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-hospital zmdi-hc-fw"></i> Hospitalizaci&oacute;n <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                             <ul class="list-unstyled full-box">
                                 <li>
-                                    <a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Teacher</a>
+                                    <a href=""><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Teacher</a>
                                 </li>
                                 <li>
-                                    <a href="representative.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Representative</a>
+                                    <a href=""><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Representative</a>
                                 </li>
                                 <li>
-                                    <a href="registration.html"><i class="zmdi zmdi-money-box zmdi-hc-fw"></i> Registration</a>
+                                    <a href=""><i class="zmdi zmdi-money-box zmdi-hc-fw"></i> Registration</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         
                         <g:if test="${session.usuario}">
                             <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">

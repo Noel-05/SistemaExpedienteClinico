@@ -102,12 +102,12 @@ class HistorialClinicoController {
             notFound()
             return
         }
-        historialClinicoService.delete(id)  
+        historialClinicoService.delete(id) 
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'historialClinico.label', default: 'HistorialClinico'), id])
-                redirect action:"index", method:"GET"
+                redirect action:"index", method:"GET"    
             }
             '*'{ render status: NO_CONTENT }
         }

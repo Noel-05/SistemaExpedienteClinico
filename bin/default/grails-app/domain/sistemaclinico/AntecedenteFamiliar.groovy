@@ -10,7 +10,7 @@ class AntecedenteFamiliar {
     static mappedBy = [idExpediente: "id"]
 
     static constraints = {
-        relacionAntecedenteFamiliar(nullable:false)
+        relacionAntecedenteFamiliar(nullable:false) 
         id(nullable:true)
     }
     static mapping = {

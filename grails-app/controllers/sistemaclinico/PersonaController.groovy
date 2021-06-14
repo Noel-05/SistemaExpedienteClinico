@@ -22,8 +22,10 @@ class PersonaController {
     def show(String id) {
         def persona
         persona=Persona.findById(id)
+        def targetUri = params.targetUri ?: "/${id}"   
+        //redirect(uri: targetUri)
         //println persona.nombres
-        respond persona
+        respond persona, model:[uri: targetUri]  
     }
     def municipios(Long id){
         def municipio=Municipio.findById(id)
@@ -125,7 +127,6 @@ class PersonaController {
             notFound()
             return
         }
-
         personaService.delete(id)
 
         request.withFormat {

@@ -43,10 +43,7 @@
                 </div>
                 <div class="container-fluid">
                     <div class="container w-75 p-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Nuevo paciente
-                            </div>
+                        <div>
                             <div class="card-body">
                                 <div class="col-md-9" style="margin-left: 100px;">
                                     <!--<div class="card-body">-->
@@ -80,7 +77,7 @@
                                                 <div class="form-group row">
                                                         <label class="col-4 col-form-label" for="nombres">Identificador:</label> 
                                                         <div class="col-8">
-                                                            <g:field id="id" name="id" placeholder="001-RC" type="text" class="form-control" aria-describedby="idHelpBlock" required="required"/> 
+                                                            <g:field id="id" name="id" placeholder="001-RC" type="text" pattern="[a-zA-Z0-9-]+" title="Solo se permiten letras, numeros y guiones" class="form-control" aria-describedby="idHelpBlock" required="required"/> 
                                                             <span id="idHelpBlock" class="form-text text-muted">Ingresar el identificador</span>
                                                         </div>
                                                     </div>

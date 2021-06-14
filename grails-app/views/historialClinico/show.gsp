@@ -70,11 +70,11 @@
                                 </div>
                                 <br>
                                 <div class="container mb-3">
-                                    <g:form resource="${this.departamento}" method="DELETE">
-                                        <fieldset class="buttons">
-                                            <g:link class="edit btn btn-info" controller="historialClinico" action="edit" id="${h?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                                            <input class="delete btn btn-danger" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-                                        </fieldset>
+                                    <g:form resource="${this.historialClinico}" id="${h?.id}" method="DELETE">
+                                    <div class="container" align="center">
+                                        <%-- <g:link class="btn btn-success" style="background-color:#009688; color:white;" contoller="historialClinico" action="edit" id="${h?.id}">Editar</g:link> --%>
+                                        <input id="${h?.id}"  class="delete btn btn-danger" style="background-color:#009688; color:white;" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                                    </div>
                                     </g:form>
                                 </div>
                             </g:each>
@@ -86,6 +86,7 @@
                         </g:else>
                     </div>
                     <div >
+                    
                         <div class="container" align="center">
                             <button type="button" class="btn btn-outline-success" href="${createLink(controller:'historialClinico', action:'index')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
                         </div>

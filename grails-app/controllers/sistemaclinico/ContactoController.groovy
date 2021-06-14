@@ -20,7 +20,7 @@ class ContactoController {
     def create() {
         respond new Contacto(params), model:[paciente: params.id] 
     }
-
+ 
     def save(Contacto contacto) {
         if (contacto == null) {
             notFound()
@@ -75,13 +75,14 @@ class ContactoController {
             notFound()
             return
         }
-
+        def cont=contactoService.get(id) 
+        def contPer=cont.idPersona.id
         contactoService.delete(id)
-
-        request.withFormat {
+        
+        request.withFormat { 
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'contacto.label', default: 'Contacto'), id])
-                redirect (action: "index", id:"${params.idPersona}")
+                flash.message = message(code: 'Registro eliminado.', args: [message(code: 'contacto.label', default: 'Contacto'), id])
+                redirect (action: "index", id:"${contPer}", model:[paciente: contPer]) 
             }
             '*'{ render status: NO_CONTENT }
         }

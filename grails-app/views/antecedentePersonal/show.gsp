@@ -38,7 +38,11 @@
                         </tr>
                     </tbody>
                 </table>
-
+                <g:form resource="${this.antecedentePersonal}" method="DELETE">
+                <div class="container" align="center">
+                    <button style="background-color:#009688; color:white;" class="btn btn-danger float-rigth" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Eliminar</button>
+                </div>
+            </g:form>
             </div>
         </div>
     </div>

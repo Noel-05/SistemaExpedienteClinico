@@ -22,10 +22,7 @@
                     <button type="button" class="btn btn-outline-success" href="${createLink(controller:'expediente', action:'index')}" style="background-color:#009688; color:white;"><g:link class="index" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
                 </div>
     <div class="col-lg-6 col-md-8">
-        <div class="card">
-            <div class="card-header">
-            Datos generales
-            </div>
+        <div>
             <div class="card-body">
                 <table class="table">
                     <tbody>

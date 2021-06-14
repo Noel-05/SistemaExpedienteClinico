@@ -60,8 +60,7 @@
                                                         <g:link class="btn btn-success" controller="expediente" action="create" id="${p?.id}">Abrir Expediente </g:link>
                                                         <g:link controller="persona" action="show" id="${p.id}">Ver </g:link> |
                                                         <g:link action="edit" controller="persona" id="${p?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                                                        <button class="btn btn-danger" type="submit" action="delete" resource="${this.persona}" value="${message(code: 'Paciente eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Esta seguro? Se eliminara un registro')}');">Eliminar</button>
-                                                    </g:form> 
+                                                        </g:form> 
                                                     </div>
                                                 </td>
                                             </tr>
