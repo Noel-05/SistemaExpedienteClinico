@@ -197,11 +197,13 @@
                                                 <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Clínicos
                                                 </g:link>
                                             </li>
+                                            <li>
+                                                <g:link controller="examenFisico" action="index">
+                                                <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Físicos
+                                                </g:link>
+                                            </li>
                                         </g:if>
                                     </g:if>
-                                <!-- <li>
-                                    <a href=""><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Fisicos </a>
-                                </li> -->
                             </ul>
                         </li>
 

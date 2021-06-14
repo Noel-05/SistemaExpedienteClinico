@@ -23,6 +23,7 @@ class ExamenClinico {
 
     static mapping = {
         table: "EXAMENCLINICO"
+        version false
         id column: "IDEXAMENCLINICO"
         nombreExamenClinico column: "NOMBREEXAMENCLINICO"
         fechaRealizado column: "FECHAREALIZADO"
@@ -30,5 +31,9 @@ class ExamenClinico {
         idTipoExamen column: "IDTIPOEXAMEN"
         idCita column: "IDCITA"
         idDiagnostico column: "IDDIAGNOSTICO"
+    }
+
+    String toString(){
+        "$id"
     }
 }
