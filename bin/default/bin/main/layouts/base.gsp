@@ -201,9 +201,16 @@
                                 <i class="zmdi zmdi-book zmdi-hc-fw"></i> Examenes <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                             <ul class="list-unstyled full-box">
-                                <li>
-                                    <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Cl&iacute;nicos</a>
-                                </li>
+                                    <%-- <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Cl&iacute;nicos</a> --%>
+                                    <g:if test="${session.usuario}">
+                                        <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                            <li>
+                                                <g:link controller="examenClinico" action="index">
+                                                <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Clínicos
+                                                </g:link>
+                                            </li>
+                                        </g:if>
+                                    </g:if>
                                 <li>
                                     <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Fisicos </a>
                                 </li>

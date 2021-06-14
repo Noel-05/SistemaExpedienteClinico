@@ -75,13 +75,14 @@ class AntecedentePersonalController {
             notFound()
             return
         }
-
-        antecedentePersonalService.delete(id)
-
+        def ant=antecedentePersonalService.get(id)  
+        def antExp=ant.idExpediente.id
+        antecedentePersonalService.delete(id) 
+ 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'antecedentePersonal.label', default: 'AntecedentePersonal'), id])
-                redirect (action: "index", contoller:"expediente")
+                redirect (action: "index", id: "${antExp}", model: [expediente: antExp])
             }
             '*'{ render status: NO_CONTENT }
         }

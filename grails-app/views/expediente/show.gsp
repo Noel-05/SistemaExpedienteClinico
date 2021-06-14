@@ -48,7 +48,12 @@
                         </tr>
                     </tbody>
                 </table>
-
+                <g:form resource="${this.expediente}" method="DELETE">
+                <div class="container" align="center">
+                    <button type="button" class="btn btn-outline-success" href="${createLink(controller:'expediente', action:'index')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+                    <input  class="delete btn btn-danger" style="background-color:#009688; color:white;" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                </div>
+                </g:form>
             </div>
         </div>
     </div>

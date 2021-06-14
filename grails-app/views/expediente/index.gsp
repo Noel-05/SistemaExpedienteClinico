@@ -57,8 +57,8 @@
                                                     <g:form resource="${this.expediente}" method="DELETE">
                                                         <fieldset class="buttons">
                                                             <g:link controller="expediente" action="show" id="${e?.id}"><g:message code="default.button.show.label" default="Ver" /></g:link> | 
-                                                            <g:link  contoller="expediente" action="edit" id="${e?.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link>
-                                                            <button class="btn btn-danger" type="submit" value="${message(code: 'Expediente eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Esta seguro? Se eliminara un registro')}');">Eliminar</button>
+                                                            <g:link  contoller="expediente" action="edit" id="${e?.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link> |
+                                                            <g:link  controller="expediente" action="show" id="${e?.id}">Eliminar</g:link>
                                                         </fieldset>
                                                     </g:form>
                                                     </div>

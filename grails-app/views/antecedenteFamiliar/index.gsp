@@ -15,7 +15,7 @@
                         <h1 align="center" class="form-titulo" style="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="Listado de Informacio Familiar" args="[entityName]" /></h1>
                     </font>
 				<div class="container" align="center">
-					<g:link class="btn btn-outline-success" aria-expanded="false" controller="expediente" action="show" id="${expediente.id}" style="background-color:#009688; color:white;">Regresar
+					<g:link class="btn btn-outline-success" aria-expanded="false" controller="expediente" action="show" id="${expediente.id}"  style="background-color:#009688; color:white;">Regresar
                     </g:link>
 				</div>
             </div>
@@ -53,7 +53,7 @@
                                                     <fieldset class="buttons">
                                                             <g:link controller="antecedenteFamiliar" action="show" id="${a?.id}">Ver</g:link> |
                                                             <g:link  controller="antecedenteFamiliar" action="edit" id="${a?.id}"><g:message code="default.button.edit.label" default="Editar" /></g:link>
-                                                            <button class="btn btn-danger"  type="submit" value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'Esta seguro? Se eliminara un registro', default: 'Eliminar')}');">Eliminar</button>
+                                                            <g:link controller="antecedenteFamiliar" action="show"  id="${a?.id}">Eliminar</g:link>
                                                         </fieldset>
                                                     </g:form>
                                                     </div>

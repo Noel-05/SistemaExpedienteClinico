@@ -53,12 +53,9 @@
                                                     <fieldset class="buttons">
                                                             <g:link  controller="antecedentePersonal" action="show" id="${a?.id}">Ver</g:link> |
                                                             <g:link  controller="antecedentePersonal" action="edit" id="${a?.id}">Editar</g:link>
-                                                            <button class="btn btn-danger"  type="submit" value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Eliminar')}');">Eliminar</button>
+                                                            <g:link controller="antecedentePersonal" action="show" id="${a?.id}" value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Eliminar')}');">Eliminar</g:link>
                                                         </fieldset>
                                                     </g:form>
-                                                    <g:form resource="${this.antecedentePersonal}" method="DELETE">
-                                                        
-                                                    </g:form> 
                                                     </div>
                                                 </td>
                                             </tr>
