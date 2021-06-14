@@ -22,6 +22,6 @@ class Expediente {
     }
 
     String toString(){
-         "${id + fechaCreado}" 
+         "${id}" 
     }
 }

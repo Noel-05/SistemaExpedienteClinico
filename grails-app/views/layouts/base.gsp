@@ -221,32 +221,18 @@
                         <g:if test="${session.usuario}">
                             <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
                                 <li>
-                                    <a href="#!" class="btn-sideBar-SubMenu">
-                                        <i class="zmdi zmdi-book zmdi-hc-fw"></i> Registro de ingreso<i class="zmdi zmdi-caret-down pull-right"></i>
+                                    <a href="/registroIngreso/index" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-card zmdi-hc-fw">Registro ingresos</i> 
                                     </a>
-                                    <ul class="list-unstyled full-box">
-                                       <li>
-                                            <a href="/registroIngreso/index" class="btn-sideBar-SubMenu">
-                                                <i class="zmdi zmdi-timer zmdi-hc-fw">Listado</i> 
-                                            </a>
-                                       </li>                                        
-                                    </ul>
                                 </li>
                             </g:if>
                         </g:if>
                          <g:if test="${session.usuario}">
                             <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
                                 <li>
-                                    <a href="#!" class="btn-sideBar-SubMenu">
-                                        <i class="zmdi zmdi-book zmdi-hc-fw"></i> Diagnosticos <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    <a href="/diagnostico/index" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-card zmdi-hc-fw">Diagnosticos</i> 
                                     </a>
-                                    <ul class="list-unstyled full-box">
-                                       <li>
-                                            <a href="/SignoVital/index" class="btn-sideBar-SubMenu">
-                                                <i class="zmdi zmdi-timer zmdi-hc-fw">Listado</i> 
-                                            </a>
-                                       </li>                                        
-                                    </ul>
                                 </li>
                             </g:if>
                         </g:if>

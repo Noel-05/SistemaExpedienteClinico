@@ -29,4 +29,7 @@ class Diagnostico {
         comentarios column:"COMENTARIOSDIAGNOSTICOS"
         conclusion column:"CONCLUSION"
     }
+      String toString(){
+         "${id}"
+    }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="base" />
         <g:set var="entityName" value="${message(code: 'indicacion.label', default: 'Indicacion')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
@@ -11,7 +11,7 @@
                 <div class="container-fluid">
                 <!-- Agregar esto como Título del Template -->
                     <font face="small fonts" size="10" color="#049286">
-                        <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list" args="[entityName]" default="Listado de Clinicas"/></h1>
+                        <h1 align="center" class="form-titulo" style ="margin-left: 5px; margin-top:20px; bg-success text-white"><g:message code="default.list" args="[entityName]" default="Listado de indicaciones"/></h1>
                     </font>
                     
                     <!-- Agregar esto para el botón de Nuevo Registro -->

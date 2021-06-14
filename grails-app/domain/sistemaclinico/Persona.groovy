@@ -53,5 +53,7 @@ class Persona implements Serializable {
     public void setDireccion (Direccion idDireccion){
         this.idDireccion = idDireccion
     }
-    "${nombres + apellidos}"
+     String toString(){
+    "${nombres} ${apellidos}"
+    }
 }

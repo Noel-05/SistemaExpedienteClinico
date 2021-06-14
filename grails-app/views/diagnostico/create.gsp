@@ -13,7 +13,7 @@
 
         <!-- Agregar esto para el botón Regresar -->
         <div class="container" align="center">
-            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'usuario', action:'list')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
+            <button type="button" class="btn btn-outline-success" href="${createLink(controller:'diagnostico', action:'list')}" style="background-color:#009688; color:white;"><g:link class="list" action="index" style="text-decoration:none; color:white;"><g:message code="default.list" args="[entityName]" default="Regresar"/></g:link></button>
         </div>
         </br>
         <div id="create-diagnostico" class="content scaffold-create" role="main">

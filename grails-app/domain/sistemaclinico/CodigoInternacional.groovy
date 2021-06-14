@@ -13,4 +13,7 @@ class CodigoInternacional {
         id column:"CODIGOINTERNACIONAL"
         nombreCodigo column: "NOMBRECODIGOINTERNACIONAL"
     }
+    String toString(){
+         "${id}"
+    }
 }

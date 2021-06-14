@@ -23,4 +23,7 @@ class Medicamento {
         fechaCaducidad column:"FECHACADUCIDAD"
         via column: "IDVIA"
     }
+      String toString(){
+         "${id}"
+    }
 }
