@@ -63,12 +63,6 @@
                 
                 <ul class="full-box list-unstyled text-center">
                     <li>
-                        <a href="#!">
-                            <i class="zmdi zmdi-settings"></i>
-                        </a>
-                    </li>
-                    
-                    <li>
                         <g:link controller="usuario" action="logout">
                             <i class="zmdi zmdi-power"></i>
                         </g:link>
@@ -88,7 +82,7 @@
                         </li>
                         
                         <g:if test="${session.usuario}">
-                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador'))}">
                                 <li>
                                     <g:link controller="usuario" action="index">
                                         <i class="zmdi zmdi-account zmdi-hc-fw"></i> Usuarios
@@ -114,7 +108,7 @@
                         </li>
 
                         <g:if test="${session.usuario}">
-                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
                                 <li>
                                     <g:link controller="persona" action="index">
                                         <i class="zmdi zmdi-accounts-alt zmdi-hc-fw"></i> Paciente </i>
@@ -124,7 +118,7 @@
                         </g:if>
 
                         <g:if test="${session.usuario}">
-                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
                                     <g:link controller="expediente" action="index">
                                         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Expedientes Cl&iacute;nico</i>
@@ -133,8 +127,9 @@
                                 </li>
                             </g:if>
                         </g:if>
+                            
                         <g:if test="${session.usuario}">
-                            <g:if test="${session.usuario.idRol.nombreRol.equals('Administrador')}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
                                     <g:link controller="historialClinico" action="index">
                                         <i class="zmdi zmdi-card zmdi-hc-fw"></i> Historial Cl&iacute;nico</i>
@@ -142,40 +137,53 @@
                                 </li>
                             </g:if>
                         </g:if>
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Instalaciones <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                            <ul class="list-unstyled full-box">
+                            
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
                                 <li>
-                                    <a href="/clinica/index"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Cl&iacute;nica</a>
+                                    <a href="#!" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-balance zmdi-hc-fw"></i> Instalaciones <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </a>
+                                    <ul class="list-unstyled full-box">
+                                        <li>
+                                            <a href="/clinica/index"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Cl&iacute;nica</a>
+                                        </li>
+                                        <li>
+                                            <a href="/hospital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Hospital </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="/hospital/index"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Hospital </a>
-                                </li>
-                            </ul>
-                        </li>
-
+                            </g:if>
+                        </g:if>
+                            
                         <!-- <li>
                             <a href="#!" class="btn-sideBar-SubMenu">
                                 <i class="zmdi zmdi-money zmdi-hc-fw"></i> Costo Servicios <i class="zmdi zmdi-caret-down pull-right"></i>
                             </a>
                         </li> -->
-
-                        <li>
-                            <a href="/SignoVital/index" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-timer zmdi-hc-fw"></i> - Signos Vitales
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/consulta/index" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-case zmdi-hc-fw"></i> - Consulta M&eacute;dica
-                            </a>
-                        </li>
+                    
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
+                                <li>
+                                    <a href="/SignoVital/index" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-timer zmdi-hc-fw"></i> - Signos Vitales
+                                    </a>
+                                </li>
+                            </g:if>
+                        </g:if>
 
                         <g:if test="${session.usuario}">
-                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
+                                <li>
+                                    <a href="/consulta/index" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-case zmdi-hc-fw"></i> - Consulta M&eacute;dica
+                                    </a>
+                                </li>
+                            </g:if>
+                        </g:if>
+                        
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
                                     <g:link controller="sintoma" action="index">
                                         <i class="zmdi zmdi-account zmdi-hc-fw"></i> Sintomatología
@@ -183,38 +191,48 @@
                                 </li>
                             </g:if>
                         </g:if>
-
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-book zmdi-hc-fw"></i> Examenes <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                            <ul class="list-unstyled full-box">
-                                    <%-- <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Cl&iacute;nicos</a> --%>
-                                    <g:if test="${session.usuario}">
-                                        <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
-                                            <li>
-                                                <g:link controller="examenClinico" action="index">
-                                                <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Clínicos
-                                                </g:link>
-                                            </li>
+                            
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                <li>
+                                    <a href="#!" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-book zmdi-hc-fw"></i> Examenes <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </a>
+                                    <ul class="list-unstyled full-box">
+                                        <%-- <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Cl&iacute;nicos</a> --%>
+                                        <g:if test="${session.usuario}">
+                                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                                <li>
+                                                    <g:link controller="examenClinico" action="index">
+                                                    <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Clínicos
+                                                    </g:link>
+                                                </li>
+                                                <li>
+                                                    <g:link controller="examenFisico" action="index">
+                                                    <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Físicos
+                                                    </g:link>
+                                                </li>
+                                            </g:if>
                                         </g:if>
-                                    </g:if>
-                                <li>
-                                    <a href="school.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Fisicos </a>
+                                    </ul>
                                 </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="btn-sideBar-SubMenu">
-                                <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> - Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
-                            </a>
-                            <ul class="list-unstyled full-box">
+                            </g:if>
+                        </g:if>
+                            
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
-                                    <a href="/TratamientoMedico/index"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Tratamientos </a>
+                                    <a href="#!" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> - Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </a>
+                                    <ul class="list-unstyled full-box">
+                                        <li>
+                                            <a href="/TratamientoMedico/index"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i> Tratamientos </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                            </ul>
-                        </li>
+                            </g:if>
+                        </g:if>
 
                         <!-- <li>
                             <a href="#!" class="btn-sideBar-SubMenu">

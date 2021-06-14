@@ -32,7 +32,7 @@
                             <div class="card-body px-0 pt-0">
                                 <div class="table-responsive" style="width:80%; display:inline-block;">
                                     <table class="table table-hover text-center ml-5 mt-2">
-                                        <thead class="thead-light">
+                                        <thead>
                                             <tr>
                                                 <th scope="col" style="color:#009688;">#</th>
                                                 <th scope="col" style="color:#009688;">Telefono</th>
@@ -50,10 +50,10 @@
                                                     <td>${c?.correo}</td>
                                                     <td>
                                                         <div class="btn-group text-nowrap">
-                                                        <g:form resource="${this.contacto}" method="DELETE">
+                                                        <g:form resource="${this.contacto}" id="${c?.id}" method="DELETE">
                                                             <fieldset class="buttons">
-                                                            <g:link  controller="contacto" action="edit" id="${c?.id}">Editar</g:link> 
-                                                            <button class="btn btn-danger" type="submit"><g:message  value="${message(code: 'Registro eliminado.', default: 'Eliminar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Esta seguro? Se eliminara un registro')}');" />Eliminar</button>
+                                                            <g:link  controller="contacto" action="edit">Editar</g:link> 
+                                                            <input  class="delete btn btn-danger" style="background-color:#009688; color:white;" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                                                             </fieldset>
                                                         </g:form> 
                                                         </div>

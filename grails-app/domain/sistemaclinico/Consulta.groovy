@@ -30,6 +30,6 @@ class Consulta {
     }
 
     String toString(){
-        id
+         "${id}"
     }
 }

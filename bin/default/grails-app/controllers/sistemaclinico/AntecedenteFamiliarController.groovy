@@ -70,18 +70,23 @@ class AntecedenteFamiliarController {
     }
 
     def delete(Long id) {
+        println "Entra aqui"
         if (id == null) {
             notFound()
             return
         }
-
-        antecedenteFamiliarService.delete(id)
+        def ant=antecedenteFamiliarService.get(id)
+        def antExp=ant.idExpediente.id
+        antecedenteFamiliarService.delete(id)  
 
         request.withFormat {
+            println "y aqui"
             form multipartForm {
+                println "y aqui tambien"
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'antecedenteFamiliar.label', default: 'AntecedenteFamiliar'), id])
-                redirect (action: "index", id:"${params.idExpediente}")
+                redirect (action: "index", id:"${antExp}", model:[expediente: antExp])
             }
+            println " aqui "
             '*'{ render status: NO_CONTENT }
         }
     }

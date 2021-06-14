@@ -166,7 +166,7 @@
                             <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
                                     <a href="/SignoVital/index" class="btn-sideBar-SubMenu">
-                                        <i class="zmdi zmdi-timer zmdi-hc-fw"></i> - Signos Vitales
+                                        <i class="zmdi zmdi-timer zmdi-hc-fw"></i>  Signos Vitales
                                     </a>
                                 </li>
                             </g:if>
@@ -176,7 +176,7 @@
                             <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
                                     <a href="/consulta/index" class="btn-sideBar-SubMenu">
-                                        <i class="zmdi zmdi-case zmdi-hc-fw"></i> - Consulta M&eacute;dica
+                                        <i class="zmdi zmdi-case zmdi-hc-fw"></i>  Consulta M&eacute;dica
                                     </a>
                                 </li>
                             </g:if>
@@ -218,12 +218,43 @@
                                 </li>
                             </g:if>
                         </g:if>
-                            
+                        <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                <li>
+                                    <a href="#!" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-book zmdi-hc-fw"></i> Registro de ingreso<i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </a>
+                                    <ul class="list-unstyled full-box">
+                                       <li>
+                                            <a href="/registroIngreso/index" class="btn-sideBar-SubMenu">
+                                                <i class="zmdi zmdi-timer zmdi-hc-fw">Listado</i> 
+                                            </a>
+                                       </li>                                        
+                                    </ul>
+                                </li>
+                            </g:if>
+                        </g:if>
+                         <g:if test="${session.usuario}">
+                            <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico')) || (session.usuario.idRol.nombreRol.equals('Secretaria'))}">
+                                <li>
+                                    <a href="#!" class="btn-sideBar-SubMenu">
+                                        <i class="zmdi zmdi-book zmdi-hc-fw"></i> Diagnosticos <i class="zmdi zmdi-caret-down pull-right"></i>
+                                    </a>
+                                    <ul class="list-unstyled full-box">
+                                       <li>
+                                            <a href="/SignoVital/index" class="btn-sideBar-SubMenu">
+                                                <i class="zmdi zmdi-timer zmdi-hc-fw">Listado</i> 
+                                            </a>
+                                       </li>                                        
+                                    </ul>
+                                </li>
+                            </g:if>
+                        </g:if>
                         <g:if test="${session.usuario}">
                             <g:if test="${(session.usuario.idRol.nombreRol.equals('Administrador')) || (session.usuario.idRol.nombreRol.equals('Medico'))}">
                                 <li>
                                     <a href="#!" class="btn-sideBar-SubMenu">
-                                        <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i> - Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
+                                        <i class="zmdi zmdi-comment-list zmdi-hc-fw"></i>  Tratamientos <i class="zmdi zmdi-caret-down pull-right"></i>
                                     </a>
                                     <ul class="list-unstyled full-box">
                                         <li>

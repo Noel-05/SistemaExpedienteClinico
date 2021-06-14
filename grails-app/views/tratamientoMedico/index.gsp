@@ -46,8 +46,7 @@
                                                  <th scope="col" style="color:#009688;">Comentarios</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                        <g:if test="${ !tratamientoMedicoList.empty }">
+                                       
                                            
                                         
                                             <g:each status="i" var="p" in="${tratamientoMedicoList}">
@@ -57,12 +56,6 @@
                                                 <td>${p?.comentario} </td>
                                             </tr>
                                             </g:each>
-                                            </g:if>
-                                            <g:else>
-                                               <div class="alert alert-info mt-4 ml-5" role="alert" >
-                                                    No se encontraron registros
-                                                </div>
-                                            </g:else>
                                         </tbody>
                                     </table>
                                     <div class="pagination">

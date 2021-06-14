@@ -55,11 +55,6 @@
             </div>
         </g:if>
         
-        </br></br></br></br>
-        <h5 style="text-align:center; margin: 0 auto;"><strong>CREDENCIALES DE PRUEBA</strong></h5>
-        </br>
-        <h5 style="text-align:center; margin: 0 auto;"><strong>Usuario:</strong> admin</h5>
-        <h5 style="text-align:center; margin: 0 auto;"><strong>Password:</strong> Expediente2021.</h5>
         </br>
         
     </body>

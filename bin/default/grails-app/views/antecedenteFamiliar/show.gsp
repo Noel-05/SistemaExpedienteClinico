@@ -37,9 +37,9 @@
                 </table>
 
             </div>
-                <g:form resource="${this.antecedenteFamiliar}" method="DELETE">
-                <div class="card-footer">
-                    <%-- <button style="background-color:#dc3545; color:white;" class="btn btn-danger float-rigth" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Eliminar</button> --%>
+            <g:form resource="${this.antecedenteFamiliar}" method="DELETE">
+                <div class="container" align="center">
+                <button style="background-color:#009688; color:white;" class="btn btn-danger float-rigth" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Eliminar</button>
                 </div>
             </g:form>
         </div>
