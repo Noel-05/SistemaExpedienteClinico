@@ -16,7 +16,7 @@ class Expediente {
     static mapping = {
         table "EXPEDIENTE"
         version false
-        id column: "IDEXPEDIENTE", generator: "sequence", params: [sequence:"EXPEDIENTE_ID_SEQ"]
+        id column: "IDEXPEDIENTE", generator: "sequence", params: [sequence:"expediente_id_sequence"]
         fechaCreado column: "FECHACREADO"
         idPersona column: "IDPERSONA", generator: "foreign"
     }

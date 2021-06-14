@@ -27,10 +27,7 @@
             <section class="content">
 				<div class="container-fluid">
 					<div class="container w-75 p-3">
-						<div class="card">
-							<div class="card-header">
-								Nuevo Contacto personal
-							</div>
+						<div>
 							<div class="card-body">
 								<div class="col-md-9" style="margin-left: 100px;">
 									<!--<div class="card-body">-->

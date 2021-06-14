@@ -20,12 +20,7 @@
                     </g:link>
 				</div>
     <div class="col-lg-6 col-md-8">
-        <div class="card">
-            <div class="card-header">
-            <button class="btn btn-lg btn-link navbar-left" aria-expanded="true">
-                  Datos generales
-                </button>
-            </div>
+        <div >
             <div class="card-body">
                 <table class="table">
                     <tbody>
